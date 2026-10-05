@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@100..125,400..900&family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="assets/css/estilo.css">
   <link rel="stylesheet" href="assets/css/disciplina.css">
+  <link rel="stylesheet" href="assets/css/neon.css">
   <link rel="stylesheet" href="assets/css/aula.css">
 </head>
 <body>
@@ -56,6 +57,7 @@
 
     <!-- ===================== ABERTURA ===================== -->
     <section class="abertura">
+      <canvas class="chuva-matrix" aria-hidden="true"></canvas>
       <div class="envolve abertura-grade">
         <div>
           <p class="trilha-migalhas" data-revela>
@@ -66,7 +68,7 @@
 
           <!-- EDITE AQUI: nome oficial da disciplina e o título de boas-vindas -->
           <p class="nome-oficial etiqueta ouro" data-revela style="--i:1">Laboratório de Inovação III</p>
-          <h1 data-revela style="--i:1">Bem-vindos ao laboratório de ideias que viram negócio</h1>
+          <h1 data-revela style="--i:1">Bem-vindos ao laboratório de <span class="neon">ideias</span> que viram negócio</h1>
           <p class="subtitulo" data-revela style="--i:2">Planejar, desenvolver e implantar um sistema com banco de dados que vira negócio.</p>
           <p class="chamada" data-revela style="--i:3">
             Aqui o código encontra o mercado. Cada grupo parte de um problema real e desenvolve um sistema com
@@ -82,7 +84,7 @@
 
         <!-- EDITE AQUI: janela de boas-vindas -->
         <div class="vitrine" data-revela style="--i:2">
-          <span class="tec logo-flutua" title="MySQL"><img src="assets/img/tec/mysql.svg" alt="" width="64" height="64"></span>
+          <span class="tec logo-flutua neon-halo" title="MySQL"><img src="assets/img/tec/mysql.svg" alt="" width="64" height="64"></span>
           <div class="janela">
             <div class="janela-barra">
               <span class="semaforo" aria-hidden="true"><i></i><i></i><i></i></span>
@@ -514,5 +516,6 @@
   </footer>
 
   <script src="assets/js/aulas.js"></script>
+  <script src="assets/js/matrix.js"></script>
 </body>
 </html>
