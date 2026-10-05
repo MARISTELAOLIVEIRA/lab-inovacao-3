@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- EDITE AQUI: título e descrição da disciplina -->
+  <title>Laboratório de Inovação III · Stela</title>
+  <meta name="description" content="Laboratório de Inovação III: empreendedorismo, gestão de projetos e plano de negócio. ADS, 3º semestre, Senac DF Taguatinga. Profa. Maristela.">
+
+  <link rel="icon" href="assets/img/estrela.webp">
+  <script src="assets/js/placa.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@100..125,400..900&family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/estilo.css">
+  <link rel="stylesheet" href="assets/css/disciplina.css">
+  <link rel="stylesheet" href="assets/css/aula.css">
+</head>
+<body>
+
+  <!-- ===================== BARRA DO TOPO (igual em todos os sites) ===================== -->
+  <header class="barra">
+    <div class="envolve">
+      <a class="marca" href="/">
+        <img src="assets/img/estrela.webp" alt="" width="26" height="24">
+        Stela
+      </a>
+      <button type="button" class="btn-menu" id="btn-menu" aria-expanded="false" aria-controls="menu">Menu</button>
+      <nav class="nav" id="menu" aria-label="Seções da disciplina">
+        <a href="#tema">O projeto</a>
+        <a href="#ementa">Ementa</a>
+        <a href="#aulas">Aulas</a>
+        <a href="#avaliacao">Avaliação</a>
+        <a href="#bibliografia">Bibliografia</a>
+      </nav>
+      <div class="ajustes">
+        <button type="button" id="btn-tema" aria-label="Mudar para o tema claro">
+          <svg class="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg>
+        </button>
+        <button type="button" id="btn-fonte" aria-label="Aumentar o tamanho do texto">A+</button>
+        <button type="button" id="btn-movimento" aria-pressed="false">
+          <svg class="pausar" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+          <svg class="tocar" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>
+          <span class="rotulo">Pausar animações</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <!-- ===================== ABERTURA ===================== -->
+    <section class="abertura">
+      <div class="envolve abertura-grade">
+        <div>
+          <p class="trilha-migalhas" data-revela>
+            <a href="/">Stela</a> <span aria-hidden="true">/</span>
+            <a href="/#cursos">ADS</a> <span aria-hidden="true">/</span>
+            <span>Laboratório de Inovação III</span>
+          </p>
+
+          <!-- EDITE AQUI: nome oficial da disciplina e o título de boas-vindas -->
+          <p class="nome-oficial etiqueta ouro" data-revela style="--i:1">Laboratório de Inovação III</p>
+          <h1 data-revela style="--i:1">Bem-vindos ao laboratório de ideias que viram negócio</h1>
+          <p class="subtitulo" data-revela style="--i:2">Planejar, desenvolver e implantar um sistema com banco de dados que vira negócio.</p>
+          <p class="chamada" data-revela style="--i:3">
+            Aqui o código encontra o mercado. Cada grupo parte de um problema real e desenvolve um sistema com
+            banco de dados, usando o PHP e o MySQL que estão vendo na Web II. Esse sistema vira o coração de um
+            plano de negócio de base tecnológica, com números de verdade e um pitch para a banca.
+          </p>
+
+          <div class="acoes" data-revela style="--i:4">
+            <a class="botao" href="#aulas">Ver as aulas</a>
+            <a class="botao contorno" href="#ementa">Ver a ementa</a>
+          </div>
+        </div>
+
+        <!-- EDITE AQUI: janela de boas-vindas -->
+        <div class="vitrine" data-revela style="--i:2">
+          <span class="tec logo-flutua" title="MySQL"><img src="assets/img/tec/mysql.svg" alt="" width="64" height="64"></span>
+          <div class="janela">
+            <div class="janela-barra">
+              <span class="semaforo" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="janela-titulo">projeto.sql</span>
+            </div>
+            <pre class="codigo" aria-label="Script SQL que cria as tabelas cliente, produto e pedido do projeto"><code><span class="linha"><span class="num">1</span><span class="com">-- nosso negócio, em tabelas</span></span><span class="linha"><span class="num">2</span><span class="tag">CREATE TABLE</span> <span class="var">cliente</span> (...);</span><span class="linha"><span class="num">3</span><span class="tag">CREATE TABLE</span> <span class="var">produto</span> (...);</span><span class="linha"><span class="num">4</span><span class="tag">CREATE TABLE</span> <span class="var">pedido</span>  (...);</span><span class="linha"><span class="num">5</span></span><span class="linha"><span class="num">6</span><span class="tag">SELECT</span> <span class="fn">SUM</span>(<span class="var">valor</span>) <span class="tag">FROM</span> <span class="var">pedido</span>;</span><span class="linha"><span class="num">7</span><span class="com">-- a resposta vira o fluxo de caixa</span></span></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RAIO-X DO TEMA ===================== -->
+    <section class="bloco alt" id="tema">
+      <div class="envolve">
+        <div class="cab" data-revela>
+          <span class="olho">P1 · raio-x do tema</span>
+          <h2>Da ideia ao sistema, do sistema ao negócio</h2>
+          <p>
+            Ideia boa todo mundo tem. Negócio é ideia com cliente, com um sistema que funciona e com conta que fecha.
+            O semestre segue esse caminho, uma peça de cada vez.
+          </p>
+        </div>
+
+        <ol class="fluxo" aria-label="O caminho do semestre" data-revela>
+          <li><strong>Oportunidade</strong><span>Um problema real que vale a pena resolver.</span></li>
+          <li><strong>Planejamento</strong><span>Canvas, backlog, cronograma e riscos.</span></li>
+          <li><strong>Sistema</strong><span>Banco de dados MySQL e PHP, do modelo ao CRUD.</span></li>
+          <li><strong>Plano e pitch</strong><span>Mercado, operação, finanças e a apresentação para a banca.</span></li>
+        </ol>
+
+        <div class="curiosidades">
+          <div class="cartao destaque luz" data-revela>
+            <span class="olho">C1 · canvas</span>
+            <span class="numero">9 blocos</span>
+            <h3>e um negócio inteiro numa folha</h3>
+            <p>O Business Model Canvas, de Alexander Osterwalder e Yves Pigneur, organiza clientes, proposta de valor, canais, receitas, custos e mais quatro peças.</p>
+          </div>
+          <div class="cartao luz" data-revela style="--i:1">
+            <span class="olho">C2 · MVP</span>
+            <h3>Comece pequeno, aprenda rápido</h3>
+            <p>O produto mínimo viável é a versão mais simples que já dá para testar com cliente de verdade. Errar cedo sai barato.</p>
+          </div>
+          <div class="cartao luz" data-revela style="--i:2">
+            <span class="olho">C3 · ponto de equilíbrio</span>
+            <h3>Quando a conta empata</h3>
+            <p>É o momento em que o que entra paga tudo o que sai. Antes dele, prejuízo. Depois dele, lucro.</p>
+          </div>
+          <div class="cartao luz" data-revela style="--i:1">
+            <span class="olho">C4 · payback</span>
+            <h3>Quanto tempo para o dinheiro voltar</h3>
+            <p>O payback mede em quantos meses o investimento inicial se paga. Investidor sempre pergunta.</p>
+          </div>
+          <div class="cartao luz" data-revela style="--i:2">
+            <span class="olho">C5 · ecossistema</span>
+            <h3>Ninguém empreende sozinho</h3>
+            <p>Incubadoras ajudam o negócio a nascer. Aceleradoras dão impulso a quem já existe. E há apoio público ao empreendedor.</p>
+          </div>
+          <div class="cartao inteiro luz" data-revela style="--i:3">
+            <span class="olho">C6 · interdisciplinar</span>
+            <h3>Todas as disciplinas do semestre no mesmo projeto</h3>
+            <p>O PHP e o MySQL da Web II, a modelagem e a documentação das outras disciplinas viram a solução do negócio. De preferência com inteligência artificial e ligada a uma necessidade real, como as das organizações do Sistema Fecomércio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FICHA DA DISCIPLINA ===================== -->
+    <section class="bloco faixa" aria-label="Ficha da disciplina">
+      <div class="envolve">
+        <div class="ficha">
+          <div class="cartao" data-revela>
+            <span class="olho">Curso</span>
+            <strong>Análise e Desenvolvimento de Sistemas</strong>
+            <span>Faculdade de Tecnologia e Inovação Senac DF</span>
+          </div>
+          <div class="cartao" data-revela style="--i:1">
+            <span class="olho">Semestre</span>
+            <strong>3º semestre</strong>
+            <span>Noturno, Taguatinga</span>
+          </div>
+          <div class="cartao" data-revela style="--i:2">
+            <span class="olho">Carga horária</span>
+            <strong>70 horas</strong>
+            <span>60h presenciais e 10h de estudo autônomo</span>
+          </div>
+          <a class="cartao luz" href="/" data-revela style="--i:3">
+            <span class="olho">Professora</span>
+            <strong>Maristela Oliveira</strong>
+            <span>ou só Stela</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EMENTA E OBJETIVOS ===================== -->
+    <section class="bloco alt" id="ementa">
+      <div class="envolve">
+        <div class="cab" data-revela>
+          <span class="olho">E1 · ementa</span>
+          <h2>O que cabe em um semestre de laboratório</h2>
+          <p>A ementa oficial, palavra por palavra. Muita coisa, sim. Mas é tudo para o mesmo projeto.</p>
+        </div>
+
+        <div class="ementa">
+          <div data-revela>
+            <!-- EDITE AQUI: ementa oficial (copie do plano de ensino, sem mudar) -->
+            <p class="ementa-texto">
+              Planejamento, execução e avaliação de atividade interdisciplinar integrando os saberes e práticas das
+              disciplinas do semestre. Gestão de projetos, elaboração e apresentação de relatórios. Perfil empreendedor,
+              empreendedorismo estratégico, identificação e análise de oportunidades, os passos para implantação de um
+              novo empreendimento, a relação entre negócio e empresa, elaboração do plano de negócio, abordagem
+              aplicativa dos conceitos: análise de sensibilidade, ponto de equilíbrio, fluxo de caixa e índices
+              financeiros, no plano de negócio.
+            </p>
+            <div class="palavras" aria-label="Palavras-chave">
+              <span class="etiqueta ouro">Atividade interdisciplinar</span>
+              <span class="etiqueta ouro">Gestão de projetos</span>
+              <span class="etiqueta ouro">Relatórios</span>
+              <span class="etiqueta ouro">Empreendedorismo</span>
+              <span class="etiqueta ouro">Oportunidades</span>
+              <span class="etiqueta ouro">Plano de negócio</span>
+              <span class="etiqueta ouro">Análise financeira</span>
+            </div>
+          </div>
+
+          <div class="janela" data-revela style="--i:1">
+            <div class="janela-barra">
+              <span class="semaforo" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="janela-titulo">objetivos.md</span>
+            </div>
+            <div class="janela-corpo">
+              <h3>Aonde a gente quer chegar</h3>
+              <p class="objetivo-geral">
+                Capacitar os alunos a planejar, executar e avaliar uma atividade interdisciplinar que integre os saberes
+                do semestre em uma proposta de negócio de base tecnológica, aplicando a gestão de projetos, o perfil
+                empreendedor e a elaboração de um plano de negócio com análise financeira.
+              </p>
+              <ul class="lista-check">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.5 2.5L16 9.5"/></svg>Planejar, executar e avaliar uma atividade interdisciplinar integrando os saberes das disciplinas do semestre, com apoio da gestão de projetos.</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.5 2.5L16 9.5"/></svg>Elaborar e apresentar relatórios do projeto desenvolvido.</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.5 2.5L16 9.5"/></svg>Compreender o perfil empreendedor, identificar e analisar oportunidades e os passos para implantação de um novo empreendimento.</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.5 2.5L16 9.5"/></svg>Elaborar um plano de negócio aplicando análise de sensibilidade, ponto de equilíbrio, fluxo de caixa e índices financeiros.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTEÚDO PROGRAMÁTICO ===================== -->
+    <section class="bloco" id="conteudo">
+      <div class="envolve">
+        <div class="cab" data-revela>
+          <span class="olho">U1–U4 · conteúdo programático</span>
+          <h2>Quatro unidades, um negócio</h2>
+          <p>Cada unidade monta uma parte do plano. No fim, elas se encaixam no pitch.</p>
+        </div>
+        <div class="unidades">
+          <div class="cartao unidade" data-revela>
+            <div class="unidade-topo"><span class="olho">Unidade 1</span><span class="etiqueta">aulas 2 a 4</span></div>
+            <h3>Empreendedorismo e oportunidades</h3>
+            <p>Olhar para o mundo e enxergar problemas que valem um negócio.</p>
+            <ul><li>Perfil empreendedor e empreendedorismo estratégico</li><li>Identificação e análise de oportunidades</li><li>A relação entre negócio e empresa</li></ul>
+          </div>
+          <div class="cartao unidade" data-revela style="--i:1">
+            <div class="unidade-topo"><span class="olho">Unidade 2</span><span class="etiqueta">aulas 5 a 9</span></div>
+            <h3>Atividade interdisciplinar e gestão de projetos</h3>
+            <p>Transformar a ideia em projeto, com prazo, risco e relatório.</p>
+            <ul><li>Planejamento da atividade interdisciplinar integrando as disciplinas do semestre</li><li>Gestão de projetos: escopo, cronograma, riscos e acompanhamento</li><li>Execução, avaliação, elaboração e apresentação de relatórios</li></ul>
+          </div>
+          <div class="cartao unidade" data-revela style="--i:2">
+            <div class="unidade-topo"><span class="olho">Unidade 3</span><span class="etiqueta">aulas 10 a 12</span></div>
+            <h3>Implantação de um novo empreendimento</h3>
+            <p>Os passos para tirar o negócio do papel.</p>
+            <ul><li>Os passos para implantação de um novo empreendimento</li><li>Elaboração do plano de negócio: mercado, marketing e operações</li></ul>
+          </div>
+          <div class="cartao unidade" data-revela style="--i:3">
+            <div class="unidade-topo"><span class="olho">Unidade 4</span><span class="etiqueta">aulas 13 a 15</span></div>
+            <h3>Análise financeira do plano de negócio</h3>
+            <p>A hora em que a planilha diz se a ideia para em pé.</p>
+            <ul><li>Investimento inicial, custos e fluxo de caixa</li><li>Ponto de equilíbrio e índices financeiros</li><li>Análise de sensibilidade</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== AULAS ===================== -->
+    <!--
+      EDITE AQUI: uma linha por aula, com a data em data-a (AAAA-MM-DD). Turma única: não precisa de data-b.
+      O aulas.js destaca sozinho a próxima aula. Quando a página da aula existir, coloque o link no título
+      (<a href="aulas/aula-NN.html">) e a etiqueta "abrir a aula →" no fim da linha de datas.
+    -->
+    <section class="bloco alt" id="aulas">
+      <div class="envolve">
+        <div class="cab" data-revela>
+          <span class="olho">A1–A18 · aulas</span>
+          <h2>Dezoito encontros, um plano de negócio</h2>
+          <p>Segundas à noite e alguns sábados. Cada aula tem a sua página, com o que fazer e o que entregar. A próxima aparece destacada.</p>
+        </div>
+        <ol class="log lista-aulas" data-revela>
+          <li class="commit" data-a="2026-08-10">
+            <div class="commit-linha"><h3>Conhecendo o Laboratório de Inovação III</h3><span class="hash">A01</span></div>
+            <div class="meta"><span>segunda, 10/08</span> · <span>Apresentação vivencial</span></div>
+          </li>
+          <li class="commit" data-a="2026-08-17">
+            <div class="commit-linha"><h3>Eu tenho perfil empreendedor?</h3><span class="hash">A02</span></div>
+            <div class="meta"><span>segunda, 17/08</span> · <span>Situação-problema</span></div>
+          </li>
+          <li class="commit" data-a="2026-08-24">
+            <div class="commit-linha"><h3>Caçando oportunidades</h3><span class="hash">A03</span></div>
+            <div class="meta"><span>segunda, 24/08</span> · <span>Situação-problema</span></div>
+          </li>
+          <li class="commit" data-a="2026-08-29">
+            <div class="commit-linha"><h3>Do problema ao negócio: o Business Model Canvas</h3><span class="hash">A04</span></div>
+            <div class="meta"><span>sábado, 29/08</span> · <span>Projeto</span></div>
+          </li>
+          <li class="commit" data-a="2026-08-31">
+            <div class="commit-linha"><h3>Gestão de projetos I: o termo de abertura</h3><span class="hash">A05</span></div>
+            <div class="meta"><span>segunda, 31/08</span> · <span>Laboratório de práticas</span></div>
+          </li>
+          <li class="commit" data-a="2026-09-14">
+            <div class="commit-linha"><h3>Gestão de projetos II: cronograma e riscos</h3><span class="hash">A06</span></div>
+            <div class="meta"><span>segunda, 14/09</span> · <span>Laboratório de práticas</span></div>
+          </li>
+          <li class="commit" data-a="2026-09-19">
+            <div class="commit-linha"><h3>Execução e relatório parcial</h3><span class="hash">A07</span></div>
+            <div class="meta"><span>sábado, 19/09</span> · <span>Projeto</span></div>
+          </li>
+          <li class="commit" data-a="2026-09-21">
+            <div class="commit-linha"><h3>Apresentação parcial do projeto</h3><span class="hash">A08</span></div>
+            <div class="meta"><span>segunda, 21/09</span> · <span>Amostra de trabalho</span></div>
+          </li>
+          <li class="commit" data-a="2026-09-28">
+            <div class="commit-linha"><h3>Entrega do 1º bimestre: registro no Loop e no README.md</h3><span class="hash">A09</span></div>
+            <div class="meta"><span>segunda, 28/09</span> · <span>Amostra de trabalho</span></div>
+          </li>
+          <li class="commit" data-a="2026-10-05">
+            <div class="commit-linha"><h3><a href="aulas/aula-10.html">Os passos para implantar um novo empreendimento</a></h3><span class="hash">A10</span></div>
+            <div class="meta"><span>segunda, 05/10</span> · <span>Situação-problema</span> <a class="etiqueta ouro" href="aulas/aula-10.html">abrir a aula →</a></div>
+          </li>
+          <li class="commit" data-a="2026-10-17">
+            <div class="commit-linha"><h3>Plano de negócio I: mercado e marketing</h3><span class="hash">A11</span></div>
+            <div class="meta"><span>sábado, 17/10</span> · <span>Projeto</span></div>
+          </li>
+          <li class="commit" data-a="2026-10-19">
+            <div class="commit-linha"><h3>Plano de negócio II: operações e protótipo</h3><span class="hash">A12</span></div>
+            <div class="meta"><span>segunda, 19/10</span> · <span>Projeto</span></div>
+          </li>
+          <li class="commit" data-a="2026-10-26">
+            <div class="commit-linha"><h3>Análise financeira I: investimento, custos e fluxo de caixa</h3><span class="hash">A13</span></div>
+            <div class="meta"><span>segunda, 26/10</span> · <span>Laboratório de práticas</span></div>
+          </li>
+          <li class="commit" data-a="2026-11-09">
+            <div class="commit-linha"><h3>Análise financeira II: ponto de equilíbrio e índices</h3><span class="hash">A14</span></div>
+            <div class="meta"><span>segunda, 09/11</span> · <span>Laboratório de práticas</span></div>
+          </li>
+          <li class="commit" data-a="2026-11-14">
+            <div class="commit-linha"><h3>Análise de sensibilidade</h3><span class="hash">A15</span></div>
+            <div class="meta"><span>sábado, 14/11</span> · <span>Laboratório de práticas</span></div>
+          </li>
+          <li class="commit" data-a="2026-11-16">
+            <div class="commit-linha"><h3>Relatório final e ensaio do pitch</h3><span class="hash">A16</span></div>
+            <div class="meta"><span>segunda, 16/11</span> · <span>Projeto</span></div>
+          </li>
+          <li class="commit" data-a="2026-11-23">
+            <div class="commit-linha"><h3>Apresentação final do plano de negócio</h3><span class="hash">A17</span></div>
+            <div class="meta"><span>segunda, 23/11</span> · <span>Exposição prática</span></div>
+          </li>
+          <li class="commit" data-a="2026-12-07">
+            <div class="commit-linha"><h3>Devolutiva e encerramento</h3><span class="hash">A18</span></div>
+            <div class="meta"><span>segunda, 07/12</span> · <span>Encerramento</span></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== COMO AS AULAS FUNCIONAM ===================== -->
+    <section class="bloco" id="metodo">
+      <div class="envolve">
+        <div class="cab" data-revela>
+          <span class="olho">M1 · metodologia</span>
+          <h2>Projeto em grupo, do primeiro ao último encontro</h2>
+        </div>
+        <div class="metodo">
+          <div class="texto" data-revela>
+            <p>
+              Cada grupo desenvolve uma proposta de negócio de base tecnológica, com um sistema em PHP e MySQL, que
+              junta as disciplinas do semestre e responde a uma oportunidade real. O projeto anda com gestão de verdade: termo de abertura, escopo,
+              cronograma, riscos e relatórios.
+            </p>
+            <p>
+              A IA entra com senso crítico: o Copilot do Microsoft 365 ajuda na pesquisa de mercado, na escrita e nas
+              planilhas, e o GitHub Copilot ajuda no protótipo. Quem valida tudo são vocês.
+            </p>
+            <p class="citacao">Ideia sem planilha é sonho. Planilha sem ideia é só conta.</p>
+          </div>
+          <div class="janela" data-revela style="--i:1">
+            <div class="janela-barra">
+              <span class="semaforo" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="janela-titulo">ferramentas</span>
+            </div>
+            <div class="janela-corpo">
+              <p class="prompt" aria-hidden="true"><b>stela@placa</b> <span>~/lab3</span> $ ls ferramentas/</p>
+              <div class="ferramentas">
+                <span class="etiqueta"><span class="tec" title="PHP"><img src="assets/img/tec/php.svg" alt="" width="32" height="32"></span>PHP</span>
+                <span class="etiqueta"><span class="tec" title="MySQL"><img src="assets/img/tec/mysql.svg" alt="" width="32" height="32"></span>MySQL</span>
+                <span class="etiqueta"><span class="tec" title="XAMPP"><img src="assets/img/tec/xampp.svg" alt="" width="32" height="32"></span>XAMPP</span>
+                <span class="etiqueta">Excel e Copilot do Microsoft 365</span>
+                <span class="etiqueta">Teams</span>
+                <span class="etiqueta">Loop</span>
+                <span class="etiqueta">Whiteboard</span>
+                <span class="etiqueta"><span class="tec" title="GitHub"><img src="assets/img/tec/github.svg" alt="" width="32" height="32"></span>GitHub</span>
+                <span class="etiqueta"><span class="tec" title="Moodle"><img src="assets/img/tec/moodle.svg" alt="" width="32" height="32"></span>Moodle</span>
+                <span class="etiqueta verde">IA com validação humana</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== AVALIAÇÃO ===================== -->
+    <section class="bloco alt" id="avaliacao">
+      <div class="envolve">
+        <div class="cab" data-revela>
+          <span class="olho">A1 · avaliação</span>
+          <h2>Como a nota é montada</h2>
+          <p>Dez pontos por bimestre. Aqui não tem prova: a nota vem do projeto.</p>
+        </div>
+        <div class="avaliacao">
+          <div class="cartao" data-revela>
+            <span class="olho">1º bimestre</span>
+            <h3>10 pontos</h3>
+            <div class="pontos" aria-hidden="true"><span style="--pts:4"></span><span style="--pts:6"></span></div>
+            <ul class="partes">
+              <li><span>Apresentação parcial do projeto</span><strong>4,0</strong></li>
+              <li><span>Entregas com explicação no Loop e no README.md</span><strong>6,0</strong></li>
+            </ul>
+          </div>
+          <div class="cartao" data-revela style="--i:1">
+            <span class="olho">2º bimestre</span>
+            <h3>10 pontos</h3>
+            <div class="pontos" aria-hidden="true"><span style="--pts:7"></span><span style="--pts:2"></span><span style="--pts:1"></span></div>
+            <ul class="partes">
+              <li><span>Apresentação final do plano de negócio</span><strong>7,0</strong></li>
+              <li><span>Avaliação Integrada</span><strong>2,0</strong></li>
+              <li><span>Participação na Jornada Interdisciplinar</span><strong>1,0</strong></li>
+            </ul>
+          </div>
+        </div>
+        <p class="aprovacao" data-revela>Para ser aprovado: média final de 6,0 e pelo menos 75% de frequência.</p>
+      </div>
+    </section>
+
+    <!-- ===================== BIBLIOGRAFIA ===================== -->
+    <section class="bloco" id="bibliografia">
+      <div class="envolve">
+        <div class="cab" data-revela>
+          <span class="olho">B1 · bibliografia</span>
+          <h2>Para ir além da aula</h2>
+        </div>
+        <div class="biblio">
+          <div class="cartao" data-revela>
+            <span class="olho">Básica</span>
+            <ol>
+              <li><strong>Teoria geral da administração, volume I</strong>CHIAVENATO, Idalberto. 7. ed. Rio de Janeiro: Elsevier, 2014.</li>
+              <li><strong>Teoria geral da administração, volume II</strong>CHIAVENATO, Idalberto. 7. ed. Rio de Janeiro: Elsevier, 2014.</li>
+              <li><strong>Fundamentos de administração</strong>MAXIMIANO, Antonio Cesar Amaru. 2. ed. São Paulo: Atlas, 2004.</li>
+            </ol>
+          </div>
+          <div class="cartao" data-revela style="--i:1">
+            <span class="olho">Complementar</span>
+            <ol>
+              <li><strong>Pequena empresa &amp; competitividade</strong>FARAH JR., Moisés Francisco. Curitiba: Juruá, 2008.</li>
+              <li><strong>Gerência de projetos: guia para o exame oficial do PMI</strong>HELDMAN, Kim. 5. ed. Rio de Janeiro: Elsevier, 2009.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="rodape">
+    <div class="envolve">
+      <div class="rodape-grade">
+        <div class="rodape-marca">
+          <img src="assets/img/coracao.webp" alt="" width="40" height="38">
+          <strong>Laboratório de Inovação III</strong>
+          <span>Uma disciplina do curso de ADS da Faculdade de Tecnologia e Inovação Senac DF, em Taguatinga.</span>
+        </div>
+        <nav aria-label="Nesta disciplina">
+          <h2>Nesta disciplina</h2>
+          <ul>
+            <li><a href="#tema">Da ideia ao sistema</a></li>
+            <li><a href="#ementa">Ementa e objetivos</a></li>
+            <li><a href="#aulas">Aulas</a></li>
+            <li><a href="#avaliacao">Avaliação</a></li>
+            <li><a href="#bibliografia">Bibliografia</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Outras disciplinas">
+          <h2>Outras disciplinas</h2>
+          <ul>
+            <li><a href="/prog-web-js/">Programação Web em JavaScript</a></li>
+            <li><a href="/prog-web-php/">Web II: PHP</a></li>
+            <li><a href="/lab-inovacao-4/">Laboratório de Inovação IV</a></li>
+            <li><a href="/logica-python/">Lógica de Programação com Python</a></li>
+            <li><a href="/seguranca-nuvem/">Segurança em Nuvem</a></li>
+            <li><a href="/arc/">Administração de Recursos Computacionais</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Professora">
+          <h2>Professora</h2>
+          <ul>
+            <li><a href="/">Portal da Stela</a></li>
+            <li><a href="/#cursos">Cursos e turmas</a></li>
+            <li><a href="/#neuro">Neurodiversidade</a></li>
+            <li><a href="/#contato">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="rodape-fim">
+        <span>Feito com ♥ e sucata eletrônica.</span>
+        <span>ideia + planilha = negócio</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/aulas.js"></script>
+</body>
+</html>
