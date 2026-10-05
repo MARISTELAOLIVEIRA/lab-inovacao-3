@@ -181,7 +181,7 @@
                 <span class="semaforo" aria-hidden="true"><i></i><i></i><i></i></span>
                 <span class="janela-titulo">banco.sql</span>
               </div>
-              <pre class="codigo"><code><span class="linha"><span class="num">1</span><span class="tag">CREATE TABLE</span> <span class="var">cliente</span> (</span><span class="linha"><span class="num">2</span>  <span class="var">id</span>    <span class="fn">INT</span> <span class="tag">AUTO_INCREMENT PRIMARY KEY</span>,</span><span class="linha"><span class="num">3</span>  <span class="var">nome</span>  <span class="fn">VARCHAR</span>(<span class="str">100</span>) <span class="tag">NOT NULL</span>,</span><span class="linha"><span class="num">4</span>  <span class="var">email</span> <span class="fn">VARCHAR</span>(<span class="str">120</span>) <span class="tag">UNIQUE</span></span><span class="linha"><span class="num">5</span>);</span><span class="linha"><span class="num">6</span></span><span class="linha"><span class="num">7</span><span class="tag">CREATE TABLE</span> <span class="var">pedido</span> (</span><span class="linha"><span class="num">8</span>  <span class="var">id</span>         <span class="fn">INT</span> <span class="tag">AUTO_INCREMENT PRIMARY KEY</span>,</span><span class="linha"><span class="num">9</span>  <span class="var">cliente_id</span> <span class="fn">INT</span> <span class="tag">NOT NULL</span>,</span><span class="linha"><span class="num">10</span>  <span class="var">valor</span>      <span class="fn">DECIMAL</span>(<span class="str">10</span>, <span class="str">2</span>),</span><span class="linha"><span class="num">11</span>  <span class="var">criado_em</span>  <span class="fn">DATETIME</span> <span class="tag">DEFAULT</span> <span class="fn">CURRENT_TIMESTAMP</span>,</span><span class="linha"><span class="num">12</span>  <span class="tag">FOREIGN KEY</span> (<span class="var">cliente_id</span>) <span class="tag">REFERENCES</span> <span class="var">cliente</span>(<span class="var">id</span>)</span><span class="linha"><span class="num">13</span>);</span></code></pre>
+              <pre class="codigo"><code><span class="linha"><span class="num">1</span><span class="tag">CREATE TABLE</span> cliente (</span><span class="linha"><span class="num">2</span>  id    <span class="fn">INT</span> <span class="tag">AUTO_INCREMENT</span> <span class="tag">PRIMARY KEY</span>,</span><span class="linha"><span class="num">3</span>  nome  <span class="fn">VARCHAR</span>(100) <span class="tag">NOT NULL</span>,</span><span class="linha"><span class="num">4</span>  email <span class="fn">VARCHAR</span>(120) <span class="tag">UNIQUE</span></span><span class="linha"><span class="num">5</span>);</span><span class="linha"><span class="num">6</span></span><span class="linha"><span class="num">7</span><span class="tag">CREATE TABLE</span> pedido (</span><span class="linha"><span class="num">8</span>  id         <span class="fn">INT</span> <span class="tag">AUTO_INCREMENT</span> <span class="tag">PRIMARY KEY</span>,</span><span class="linha"><span class="num">9</span>  cliente_id <span class="fn">INT</span> <span class="tag">NOT NULL</span>,</span><span class="linha"><span class="num">10</span>  valor      <span class="fn">DECIMAL</span>(10, 2),</span><span class="linha"><span class="num">11</span>  criado_em  <span class="fn">DATETIME</span></span><span class="linha"><span class="num">12</span>             <span class="tag">DEFAULT</span> <span class="fn">CURRENT_TIMESTAMP</span>,</span><span class="linha"><span class="num">13</span>  <span class="tag">FOREIGN KEY</span> (cliente_id)</span><span class="linha"><span class="num">14</span>    <span class="tag">REFERENCES</span> cliente(id)</span><span class="linha"><span class="num">15</span>);</span></code></pre>
             </div>
           </div>
 
@@ -323,14 +323,14 @@
         <!-- ===================== NAVEGAÇÃO ENTRE AULAS ===================== -->
         <nav class="nav-aulas" aria-label="Outras aulas">
           <!-- EDITE AQUI: use <a href="aula-NN.html"> quando a página da aula vizinha existir; <span> enquanto não existir -->
-          <span class="anterior">
+          <a class="anterior" href="aula-09.html">
             <span class="olho">← aula anterior</span>
             <strong>Aula 9: Entrega do 1º bimestre</strong>
-          </span>
-          <span class="proxima">
+          </a>
+          <a class="proxima" href="aula-11.html">
             <span class="olho">próxima aula →</span>
-            <strong>Aula 11: Plano de negócio I</strong>
-          </span>
+            <strong>Aula 11: Mercado, marketing e dados</strong>
+          </a>
         </nav>
 
       </div>
