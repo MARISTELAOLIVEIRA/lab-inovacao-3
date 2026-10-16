@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@100..125,400..900&family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="../assets/css/estilo.css">
   <link rel="stylesheet" href="../assets/css/disciplina.css?v=4">
-  <link rel="stylesheet" href="../assets/css/aula.css?v=2">
+  <link rel="stylesheet" href="../assets/css/aula.css?v=3">
   <link rel="stylesheet" href="../assets/css/neon.css?v=2">
 </head>
 <body>
@@ -32,6 +32,7 @@
       <nav class="nav" id="menu" aria-label="Partes da aula">
         <a href="../#aulas">← Todas as aulas</a>
         <a href="#conceitos">Conceitos</a>
+        <a href="#na-tela">Tutorial</a>
         <a href="#caso">Caso</a>
         <a href="#atividade">Atividade</a>
         <a href="#materiais">Materiais</a>
@@ -142,6 +143,151 @@
           </div>
         </section>
 
+        <!-- ===================== TUTORIAL: O PROTÓTIPO EM PHP ===================== -->
+        <section class="parte" id="na-tela">
+          <div class="cab">
+            <span class="olho">T1 · tutorial</span>
+            <h2>Mão na massa: o protótipo com PHP e MySQL em 6 passos</h2>
+            <p>
+              É a atividade da aula, com o código de cada item. O exemplo continua sendo o <strong>Lanche Já</strong> da aula 11,
+              com a tabela <code>produto</code> como entidade principal. Cada arquivo tem o botão <strong>⧉ Copiar</strong>:
+              copie, cole no VS Code, salve e teste antes de passar para o próximo passo. Depois, troquem pela entidade principal do negócio de vocês.
+            </p>
+          </div>
+
+          <!-- passo 1 -->
+          <div class="conceito" style="grid-template-columns:1fr" id="passo-1">
+            <div class="texto">
+              <span class="olho">Passo 1 · item 1 da atividade</span>
+              <h3>O plano operacional: cada processo vira uma tela</h3>
+              <p>Antes de programar, descrevam como o negócio funciona no dia a dia. Cada processo importante vira uma funcionalidade do sistema, e é assim que vocês decidem o que entra no protótipo (e o que fica para depois).</p>
+              <div class="faca-assim">
+                <strong>Faça assim:</strong>
+                <ol>
+                  <li>No Loop, crie a página <strong>Plano operacional</strong> e copie a tabela abaixo.</li>
+                  <li>Listem de três a cinco processos do negócio de vocês, com quem faz e os passos.</li>
+                  <li>Na última coluna, escrevam o que o sistema faz em cada processo. Marquem o processo principal: ele é o protótipo de hoje.</li>
+                </ol>
+              </div>
+              <div class="tabela-rola"><table class="metodos">
+                <thead><tr><th>Processo</th><th>Quem faz</th><th>Passos</th><th>O que o sistema faz</th></tr></thead>
+                <tbody>
+                  <tr><td><code>Montar o cardápio</code></td><td>Dono</td><td>Escolhe os produtos e define o preço</td><td><strong>Cadastro e lista de produtos (o protótipo de hoje)</strong></td></tr>
+                  <tr><td><code>Fazer o pedido</code></td><td>Cliente</td><td>Escolhe o lanche e o horário de retirada</td><td>Tela de pedido (próxima etapa)</td></tr>
+                  <tr><td><code>Preparar e entregar</code></td><td>Atendente</td><td>Vê a fila de pedidos e marca como pronto</td><td>Lista de pedidos do horário</td></tr>
+                </tbody>
+              </table></div>
+            </div>
+          </div>
+
+          <!-- passo 2 -->
+          <div class="conceito" style="grid-template-columns:1fr" id="passo-2">
+            <div class="texto">
+              <span class="olho">Passo 2 · item 2 da atividade</span>
+              <h3>O banco no MySQL do XAMPP</h3>
+              <div class="faca-assim">
+                <strong>Faça assim:</strong>
+                <ol>
+                  <li>Abra o painel do XAMPP e clique em <strong>Start</strong> no <strong>Apache</strong> e no <strong>MySQL</strong>. Os dois ficam verdes.</li>
+                  <li>No navegador, abra <strong>http://localhost/phpmyadmin</strong>.</li>
+                  <li>Clique na aba <strong>SQL</strong>, cole todo o <code>banco.sql</code> do grupo (o da aula 11) e clique em <strong>Executar</strong>.</li>
+                  <li>Na lista da esquerda, clique no banco e confira se as tabelas apareceram e se a <code>produto</code> tem os dados de teste.</li>
+                </ol>
+              </div>
+              <p class="dica cuidado"><strong>O MySQL não fica verde?</strong> Outro programa está usando a porta 3306 (outro MySQL instalado no computador, por exemplo). Feche o outro programa ou peça ajuda à professora para trocar a porta.</p>
+            </div>
+          </div>
+
+          <!-- passo 3 -->
+          <div class="conceito" style="grid-template-columns:1fr" id="passo-3">
+            <div class="texto">
+              <span class="olho">Passo 3 · item 3 da atividade</span>
+              <h3>A conexão do PHP com o MySQL</h3>
+              <p>O PHP conversa com o MySQL pelo <strong>PDO</strong>, como vocês estão vendo na Web II. A conexão fica num arquivo só, o <code>conexao.php</code>, e todas as páginas usam esse arquivo com <code>require</code>. Mudou a senha ou o nome do banco? Muda num lugar só.</p>
+              <div class="faca-assim">
+                <strong>Faça assim:</strong>
+                <ol>
+                  <li>Dentro da pasta <code>htdocs</code> do XAMPP (no Windows, <code>C:\xampp\htdocs</code>), crie a pasta do projeto, por exemplo <code>lanche-ja</code>, e abra no VS Code.</li>
+                  <li>Crie o <code>conexao.php</code> e o <code>teste.php</code> com o código abaixo. Troque <code>lanche_ja</code> pelo nome do banco de vocês.</li>
+                  <li>Abra <strong>http://localhost/lanche-ja/teste.php</strong>. Tem que aparecer "Conectou!" com o número de produtos.</li>
+                </ol>
+              </div>
+<div class="arquivo-codigo"><div class="arquivo-cab"><span>conexao.php</span><button type="button">⧉ Copiar</button></div><pre class="codigo"><code><span class="linha"><span class="num">1</span>&lt;?php</span><span class="linha"><span class="num">2</span><span class="com">// conexão com o MySQL do XAMPP: usuário root, sem senha, banco lanche_ja</span></span><span class="linha"><span class="num">3</span>$pdo = new PDO(</span><span class="linha"><span class="num">4</span>    &#x27;mysql:host=localhost;dbname=lanche_ja;charset=utf8mb4&#x27;,</span><span class="linha"><span class="num">5</span>    &#x27;root&#x27;,</span><span class="linha"><span class="num">6</span>    &#x27;&#x27;</span><span class="linha"><span class="num">7</span>);</span><span class="linha"><span class="num">8</span></span><span class="linha"><span class="num">9</span><span class="com">// se um comando SQL der errado, o PHP mostra o erro em vez de ficar calado</span></span><span class="linha"><span class="num">10</span>$pdo-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);</span></code></pre></div>
+<div class="arquivo-codigo"><div class="arquivo-cab"><span>teste.php</span><button type="button">⧉ Copiar</button></div><pre class="codigo"><code><span class="linha"><span class="num">1</span>&lt;?php</span><span class="linha"><span class="num">2</span>require __DIR__ . &#x27;/conexao.php&#x27;;</span><span class="linha"><span class="num">3</span></span><span class="linha"><span class="num">4</span><span class="com">// se chegou até aqui, a conexão funcionou</span></span><span class="linha"><span class="num">5</span>$total = $pdo-&gt;query(&#x27;SELECT COUNT(*) FROM produto&#x27;)-&gt;fetchColumn();</span><span class="linha"><span class="num">6</span>echo &quot;Conectou! O banco tem $total produto(s).&quot;;</span></code></pre></div>
+              <p class="dica cuidado"><strong>Apareceu <code>Unknown database</code>?</strong> O nome do banco no <code>conexao.php</code> não é igual ao do phpMyAdmin. <strong>Apareceu <code>Connection refused</code>?</strong> O MySQL não está ligado no XAMPP. <strong>Apareceu o código na tela, em vez da página?</strong> O endereço tem que começar com <code>http://localhost/</code>: arquivo PHP aberto com dois cliques não roda.</p>
+            </div>
+          </div>
+
+          <!-- passo 4 -->
+          <div class="conceito" style="grid-template-columns:1fr" id="passo-4">
+            <div class="texto">
+              <span class="olho">Passo 4 · item 4 da atividade</span>
+              <h3>O cadastro: o C do CRUD</h3>
+              <p>A mesma página mostra o formulário e, quando ele é enviado, grava no banco. Repare em três cuidados: o <code>trim</code> e o <code>if</code> conferem os dados antes de gravar; o <code>prepare</code> com marcadores (<code>:nome</code>, <code>:preco</code>) impede o SQL injection; e o <code>htmlspecialchars</code> mostra a mensagem como texto.</p>
+              <div class="faca-assim">
+                <strong>Faça assim:</strong>
+                <ol>
+                  <li>Crie o <code>cadastrar.php</code> com o código abaixo.</li>
+                  <li>Abra <strong>http://localhost/lanche-ja/cadastrar.php</strong> e cadastre um produto.</li>
+                  <li>Confira no phpMyAdmin: clique na tabela <code>produto</code> › <strong>Visualizar</strong>. O produto novo está lá?</li>
+                </ol>
+              </div>
+<div class="arquivo-codigo"><div class="arquivo-cab"><span>cadastrar.php</span><button type="button">⧉ Copiar</button></div><pre class="codigo"><code><span class="linha"><span class="num">1</span>&lt;?php</span><span class="linha"><span class="num">2</span>require __DIR__ . &#x27;/conexao.php&#x27;;</span><span class="linha"><span class="num">3</span></span><span class="linha"><span class="num">4</span>$mensagem = &#x27;&#x27;;</span><span class="linha"><span class="num">5</span></span><span class="linha"><span class="num">6</span><span class="com">// só entra aqui quando o formulário é enviado</span></span><span class="linha"><span class="num">7</span>if ($_SERVER[&#x27;REQUEST_METHOD&#x27;] === &#x27;POST&#x27;) {</span><span class="linha"><span class="num">8</span>    $nome = trim($_POST[&#x27;nome&#x27;] ?? &#x27;&#x27;);</span><span class="linha"><span class="num">9</span>    $categoria = $_POST[&#x27;categoria&#x27;] ?? &#x27;&#x27;;</span><span class="linha"><span class="num">10</span>    <span class="com">// aceita &quot;16,50&quot; e &quot;16.50&quot;</span></span><span class="linha"><span class="num">11</span>    $preco = (float) str_replace(&#x27;,&#x27;, &#x27;.&#x27;, $_POST[&#x27;preco&#x27;] ?? &#x27;&#x27;);</span><span class="linha"><span class="num">12</span></span><span class="linha"><span class="num">13</span>    if ($nome === &#x27;&#x27; || $preco &lt;= 0) {</span><span class="linha"><span class="num">14</span>        $mensagem = &#x27;Preencha o nome e um preço maior que zero.&#x27;;</span><span class="linha"><span class="num">15</span>    } else {</span><span class="linha"><span class="num">16</span>        <span class="com">// consulta preparada: o que o usuário digita nunca vira comando SQL</span></span><span class="linha"><span class="num">17</span>        $sql = &#x27;INSERT INTO produto (nome, preco, categoria) VALUES (:nome, :preco, :categoria)&#x27;;</span><span class="linha"><span class="num">18</span>        $stmt = $pdo-&gt;prepare($sql);</span><span class="linha"><span class="num">19</span>        $stmt-&gt;execute([</span><span class="linha"><span class="num">20</span>            &#x27;:nome&#x27; =&gt; $nome,</span><span class="linha"><span class="num">21</span>            &#x27;:preco&#x27; =&gt; $preco,</span><span class="linha"><span class="num">22</span>            &#x27;:categoria&#x27; =&gt; $categoria,</span><span class="linha"><span class="num">23</span>        ]);</span><span class="linha"><span class="num">24</span>        $mensagem = &#x27;Produto cadastrado!&#x27;;</span><span class="linha"><span class="num">25</span>    }</span><span class="linha"><span class="num">26</span>}</span><span class="linha"><span class="num">27</span>?&gt;</span><span class="linha"><span class="num">28</span>&lt;!DOCTYPE html&gt;</span><span class="linha"><span class="num">29</span>&lt;html lang=&quot;pt-br&quot;&gt;</span><span class="linha"><span class="num">30</span>&lt;head&gt;</span><span class="linha"><span class="num">31</span>  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><span class="linha"><span class="num">32</span>  &lt;title&gt;Cadastrar produto · Lanche Já&lt;/title&gt;</span><span class="linha"><span class="num">33</span>&lt;/head&gt;</span><span class="linha"><span class="num">34</span>&lt;body&gt;</span><span class="linha"><span class="num">35</span>  &lt;h1&gt;Cadastrar produto&lt;/h1&gt;</span><span class="linha"><span class="num">36</span>  &lt;p&gt;&lt;?= htmlspecialchars($mensagem) ?&gt;&lt;/p&gt;</span><span class="linha"><span class="num">37</span></span><span class="linha"><span class="num">38</span>  &lt;form method=&quot;post&quot;&gt;</span><span class="linha"><span class="num">39</span>    &lt;p&gt;</span><span class="linha"><span class="num">40</span>      &lt;label for=&quot;nome&quot;&gt;Nome&lt;/label&gt;</span><span class="linha"><span class="num">41</span>      &lt;input id=&quot;nome&quot; name=&quot;nome&quot;&gt;</span><span class="linha"><span class="num">42</span>    &lt;/p&gt;</span><span class="linha"><span class="num">43</span>    &lt;p&gt;</span><span class="linha"><span class="num">44</span>      &lt;label for=&quot;preco&quot;&gt;Preço&lt;/label&gt;</span><span class="linha"><span class="num">45</span>      &lt;input id=&quot;preco&quot; name=&quot;preco&quot; placeholder=&quot;16,00&quot;&gt;</span><span class="linha"><span class="num">46</span>    &lt;/p&gt;</span><span class="linha"><span class="num">47</span>    &lt;p&gt;</span><span class="linha"><span class="num">48</span>      &lt;label for=&quot;categoria&quot;&gt;Categoria&lt;/label&gt;</span><span class="linha"><span class="num">49</span>      &lt;select id=&quot;categoria&quot; name=&quot;categoria&quot;&gt;</span><span class="linha"><span class="num">50</span>        &lt;option&gt;lanche&lt;/option&gt;</span><span class="linha"><span class="num">51</span>        &lt;option&gt;bebida&lt;/option&gt;</span><span class="linha"><span class="num">52</span>        &lt;option&gt;combo&lt;/option&gt;</span><span class="linha"><span class="num">53</span>      &lt;/select&gt;</span><span class="linha"><span class="num">54</span>    &lt;/p&gt;</span><span class="linha"><span class="num">55</span>    &lt;button type=&quot;submit&quot;&gt;Cadastrar&lt;/button&gt;</span><span class="linha"><span class="num">56</span>  &lt;/form&gt;</span><span class="linha"><span class="num">57</span></span><span class="linha"><span class="num">58</span>  &lt;p&gt;&lt;a href=&quot;produtos.php&quot;&gt;Ver a lista de produtos&lt;/a&gt;&lt;/p&gt;</span><span class="linha"><span class="num">59</span>&lt;/body&gt;</span><span class="linha"><span class="num">60</span>&lt;/html&gt;</span></code></pre></div>
+            </div>
+            <div class="faca-assim">
+              <strong>Teste:</strong>
+              <ol>
+                <li>Envie o formulário vazio: aparece "Preencha o nome…" e nada é gravado.</li>
+                <li>Digite o preço com vírgula (<code>4,50</code>) e com ponto (<code>4.50</code>): os dois funcionam.</li>
+                <li>Digite no nome: <code>'); DROP TABLE produto; --</code>. Ele é gravado como texto e a tabela continua lá. É a consulta preparada protegendo o banco.</li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- passo 5 -->
+          <div class="conceito" style="grid-template-columns:1fr" id="passo-5">
+            <div class="texto">
+              <span class="olho">Passo 5 · item 5 da atividade</span>
+              <h3>A listagem: o R do CRUD</h3>
+              <p>O <code>SELECT</code> busca os produtos, o <code>fetchAll</code> traz todos numa lista e o <code>foreach</code> monta uma linha da tabela para cada um. O <code>number_format</code> mostra o preço no jeito brasileiro: <code>R$ 16,00</code>.</p>
+              <div class="faca-assim">
+                <strong>Faça assim:</strong>
+                <ol>
+                  <li>Crie o <code>produtos.php</code> com o código abaixo.</li>
+                  <li>Abra <strong>http://localhost/lanche-ja/produtos.php</strong>: aparecem os produtos de teste e os que vocês cadastraram.</li>
+                  <li>Use os links para ir e voltar entre o cadastro e a lista.</li>
+                </ol>
+              </div>
+<div class="arquivo-codigo"><div class="arquivo-cab"><span>produtos.php</span><button type="button">⧉ Copiar</button></div><pre class="codigo"><code><span class="linha"><span class="num">1</span>&lt;?php</span><span class="linha"><span class="num">2</span>require __DIR__ . &#x27;/conexao.php&#x27;;</span><span class="linha"><span class="num">3</span></span><span class="linha"><span class="num">4</span><span class="com">// Read: busca todos os produtos, em ordem de nome</span></span><span class="linha"><span class="num">5</span>$sql = &#x27;SELECT nome, preco, categoria FROM produto ORDER BY nome&#x27;;</span><span class="linha"><span class="num">6</span>$produtos = $pdo-&gt;query($sql)-&gt;fetchAll(PDO::FETCH_ASSOC);</span><span class="linha"><span class="num">7</span>?&gt;</span><span class="linha"><span class="num">8</span>&lt;!DOCTYPE html&gt;</span><span class="linha"><span class="num">9</span>&lt;html lang=&quot;pt-br&quot;&gt;</span><span class="linha"><span class="num">10</span>&lt;head&gt;</span><span class="linha"><span class="num">11</span>  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><span class="linha"><span class="num">12</span>  &lt;title&gt;Produtos · Lanche Já&lt;/title&gt;</span><span class="linha"><span class="num">13</span>&lt;/head&gt;</span><span class="linha"><span class="num">14</span>&lt;body&gt;</span><span class="linha"><span class="num">15</span>  &lt;h1&gt;Produtos&lt;/h1&gt;</span><span class="linha"><span class="num">16</span></span><span class="linha"><span class="num">17</span>  &lt;?php if (!$produtos): ?&gt;</span><span class="linha"><span class="num">18</span>    &lt;p&gt;Nenhum produto cadastrado.&lt;/p&gt;</span><span class="linha"><span class="num">19</span>  &lt;?php else: ?&gt;</span><span class="linha"><span class="num">20</span>    &lt;table border=&quot;1&quot; cellpadding=&quot;6&quot;&gt;</span><span class="linha"><span class="num">21</span>      &lt;tr&gt;</span><span class="linha"><span class="num">22</span>        &lt;th&gt;Produto&lt;/th&gt;</span><span class="linha"><span class="num">23</span>        &lt;th&gt;Categoria&lt;/th&gt;</span><span class="linha"><span class="num">24</span>        &lt;th&gt;Preço&lt;/th&gt;</span><span class="linha"><span class="num">25</span>      &lt;/tr&gt;</span><span class="linha"><span class="num">26</span>      &lt;?php foreach ($produtos as $produto): ?&gt;</span><span class="linha"><span class="num">27</span>        &lt;tr&gt;</span><span class="linha"><span class="num">28</span>          &lt;td&gt;&lt;?= htmlspecialchars($produto[&#x27;nome&#x27;]) ?&gt;&lt;/td&gt;</span><span class="linha"><span class="num">29</span>          &lt;td&gt;&lt;?= htmlspecialchars($produto[&#x27;categoria&#x27;]) ?&gt;&lt;/td&gt;</span><span class="linha"><span class="num">30</span>          &lt;td&gt;R$ &lt;?= number_format($produto[&#x27;preco&#x27;], 2, &#x27;,&#x27;, &#x27;.&#x27;) ?&gt;&lt;/td&gt;</span><span class="linha"><span class="num">31</span>        &lt;/tr&gt;</span><span class="linha"><span class="num">32</span>      &lt;?php endforeach; ?&gt;</span><span class="linha"><span class="num">33</span>    &lt;/table&gt;</span><span class="linha"><span class="num">34</span>  &lt;?php endif; ?&gt;</span><span class="linha"><span class="num">35</span></span><span class="linha"><span class="num">36</span>  &lt;p&gt;&lt;a href=&quot;cadastrar.php&quot;&gt;Cadastrar outro produto&lt;/a&gt;&lt;/p&gt;</span><span class="linha"><span class="num">37</span>&lt;/body&gt;</span><span class="linha"><span class="num">38</span>&lt;/html&gt;</span></code></pre></div>
+            </div>
+            <div class="faca-assim desafio">
+              <strong>Agora é com você:</strong>
+              <ol>
+                <li>Troquem o <code>produto</code> pela entidade principal do negócio de vocês (o processo marcado no passo 1): ajustem a tabela, os campos do formulário e as colunas da lista.</li>
+                <li>Peçam ao GitHub Copilot um CSS para deixar as duas páginas com a cara do negócio. Leiam o que ele gerou antes de aceitar.</li>
+                <li>Desafio extra da aula: o Update e o Delete, com confirmação antes de apagar (o módulo de CRUD do curso de PHP mostra como).</li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- passo 6 -->
+          <div class="conceito" style="grid-template-columns:1fr" id="passo-6">
+            <div class="texto">
+              <span class="olho">Passo 6 · itens 6 e 7 da atividade</span>
+              <h3>Quem fez o quê, e o commit</h3>
+              <div class="faca-assim">
+                <strong>Faça assim:</strong>
+                <ol>
+                  <li>No relatório do projeto, escrevam um parágrafo por disciplina do semestre dizendo o que ela trouxe para o protótipo (por exemplo: a Web II trouxe o PHP com PDO).</li>
+                  <li>Coloquem o <code>banco.sql</code> e os arquivos PHP no repositório do grupo, numa pasta <code>sistema</code>.</li>
+                  <li>No <code>README.md</code>, expliquem como rodar: ligar o XAMPP, importar o <code>banco.sql</code> no phpMyAdmin e abrir o <code>produtos.php</code> pelo <code>http://localhost/</code>.</li>
+                  <li>Façam o commit e o push: <code>git add .</code>, <code>git commit -m "Protótipo: cadastro e lista de produtos"</code> e <code>git push</code>.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- ===================== ESTUDO DE CASO ===================== -->
         <section class="parte" id="caso">
           <div class="cab">
@@ -173,13 +319,13 @@
               <span class="barra-progresso"><span></span></span>
             </div>
             <ol class="checklist" id="passos-aula-12">
-              <li><label><input type="checkbox"><span>Descrevam os processos principais do negócio no plano operacional.</span></label></li>
-              <li><label><input type="checkbox"><span>Criem o banco no MySQL do XAMPP a partir do <code>banco.sql</code>.</span></label></li>
-              <li><label><input type="checkbox"><span>Façam a conexão do PHP com o MySQL.</span></label></li>
-              <li><label><input type="checkbox"><span>Implementem o cadastro (Create) da entidade principal.</span></label></li>
-              <li><label><input type="checkbox"><span>Implementem a listagem (Read).</span></label></li>
-              <li><label><input type="checkbox"><span>Registrem como cada disciplina contribuiu com o protótipo.</span></label></li>
-              <li><label><input type="checkbox"><span>Atualizem o relatório do projeto e façam o commit.</span></label></li>
+              <li><label><input type="checkbox"><span>Descrevam os processos principais do negócio no plano operacional. <a href="#passo-1">Veja o passo 1.</a></span></label></li>
+              <li><label><input type="checkbox"><span>Criem o banco no MySQL do XAMPP a partir do <code>banco.sql</code>. <a href="#passo-2">Veja o passo 2.</a></span></label></li>
+              <li><label><input type="checkbox"><span>Façam a conexão do PHP com o MySQL. <a href="#passo-3">Veja o passo 3.</a></span></label></li>
+              <li><label><input type="checkbox"><span>Implementem o cadastro (Create) da entidade principal. <a href="#passo-4">Veja o passo 4.</a></span></label></li>
+              <li><label><input type="checkbox"><span>Implementem a listagem (Read). <a href="#passo-5">Veja o passo 5.</a></span></label></li>
+              <li><label><input type="checkbox"><span>Registrem como cada disciplina contribuiu com o protótipo. <a href="#passo-6">Veja o passo 6.</a></span></label></li>
+              <li><label><input type="checkbox"><span>Atualizem o relatório do projeto e façam o commit. <a href="#passo-6">Veja o passo 6.</a></span></label></li>
             </ol>
           </div>
         </section>
@@ -290,6 +436,7 @@
   </svg>
 
   <script src="../assets/js/aulas.js"></script>
+  <script src="../assets/js/copiar-codigo.js?v=1"></script>
   <script src="../assets/js/matrix.js?v=2"></script>
 </body>
 </html>
