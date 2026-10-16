@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@100..125,400..900&family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="../assets/css/estilo.css">
   <link rel="stylesheet" href="../assets/css/disciplina.css?v=4">
-  <link rel="stylesheet" href="../assets/css/aula.css?v=2">
+  <link rel="stylesheet" href="../assets/css/aula.css?v=3">
   <link rel="stylesheet" href="../assets/css/neon.css?v=2">
 </head>
 <body>
@@ -32,6 +32,7 @@
       <nav class="nav" id="menu" aria-label="Partes da aula">
         <a href="../#aulas">← Todas as aulas</a>
         <a href="#conceitos">Conceitos</a>
+        <a href="#na-tela">Tutorial</a>
         <a href="#caso">Caso</a>
         <a href="#atividade">Atividade</a>
         <a href="#materiais">Materiais</a>
@@ -132,6 +133,200 @@
           </div>
         </section>
 
+        <!-- ===================== TUTORIAL: A PLANILHA FINANCEIRA ===================== -->
+        <section class="parte" id="na-tela">
+          <div class="cab">
+            <span class="olho">T1 · tutorial</span>
+            <h2>Mão na massa: a planilha financeira em 5 passos</h2>
+            <p>
+              É a atividade da aula, célula por célula. O exemplo é o <strong>Lanche Já</strong> das aulas 11 e 12, com números
+              redondos para ficar fácil de conferir. Montem primeiro com os números do exemplo, confiram se dá o mesmo resultado
+              e só depois troquem pelos números do negócio de vocês. A mesma planilha cresce nas aulas 14 e 15.
+            </p>
+          </div>
+
+          <!-- antes de começar -->
+          <div class="conceito" style="grid-template-columns:1fr">
+            <div class="texto">
+              <span class="olho">Antes de começar</span>
+              <h3>Uma planilha do grupo, que todo mundo edita</h3>
+              <div class="faca-assim">
+                <strong>Faça assim:</strong>
+                <ol>
+                  <li>No canal do grupo no Teams, abra a aba <strong>Arquivos</strong> e clique em <strong>+ Novo › Pasta de trabalho do Excel</strong>. Dê o nome <code>Planilha financeira</code>. Assim o grupo inteiro edita o mesmo arquivo.</li>
+                  <li>Clique duas vezes na aba <strong>Planilha1</strong>, lá embaixo, e troque o nome para <code>Custos</code>.</li>
+                  <li>Combinem quem digita e quem confere. Na próxima etapa, invertam.</li>
+                </ol>
+              </div>
+              <p class="dica"><strong>Excel em português:</strong> as funções têm nome em português (<code>SOMA</code>, <code>SE</code>) e os argumentos são separados por <strong>ponto e vírgula</strong>. Número com casas decimais usa <strong>vírgula</strong>: <code>4,90</code>. Toda fórmula começa com <code>=</code>.</p>
+              <p class="dica">Quer conferir no fim? Baixe a <a href="../assets/arquivos/Lanche-Ja-planilha-modelo.xlsx" download>planilha modelo do Lanche Já</a>, com as abas das aulas 13, 14 e 15 prontas. Montem a de vocês primeiro e usem a modelo só para conferir.</p>
+            </div>
+          </div>
+
+          <!-- passo 1 -->
+          <div class="conceito" style="grid-template-columns:1fr" id="passo-1">
+            <div class="texto">
+              <span class="olho">Passo 1 · item 1 da atividade</span>
+              <h3>O investimento inicial: o que se gasta para começar</h3>
+              <p>É tudo o que o negócio precisa comprar antes de abrir as portas, mais o <strong>capital de giro</strong>: um dinheiro guardado para pagar as contas enquanto as vendas ainda não cobrem tudo.</p>
+              <div class="faca-assim">
+                <strong>Faça assim, na aba Custos:</strong>
+                <ol>
+                  <li>Digite o que está na tabela abaixo, célula por célula.</li>
+                  <li>Na célula <code>B9</code>, digite a fórmula e aperte <kbd>Enter</kbd>: tem que aparecer <strong>10000</strong>.</li>
+                  <li>Selecione de <code>B4</code> até <code>B9</code> e, em <strong>Página Inicial</strong>, escolha o formato <strong>Moeda</strong> (o botão <strong>R$</strong>).</li>
+                </ol>
+              </div>
+              <div class="tabela-rola"><table class="metodos">
+                <thead><tr><th>Célula</th><th>Digite</th><th>Célula</th><th>Digite</th></tr></thead>
+                <tbody>
+                  <tr><td><code>A3</code></td><td>Investimento inicial</td><td><code>B3</code></td><td>Valor</td></tr>
+                  <tr><td><code>A4</code></td><td>Chapa e estufa</td><td><code>B4</code></td><td>4800</td></tr>
+                  <tr><td><code>A5</code></td><td>Freezer usado</td><td><code>B5</code></td><td>1500</td></tr>
+                  <tr><td><code>A6</code></td><td>Tablet do balcão</td><td><code>B6</code></td><td>1200</td></tr>
+                  <tr><td><code>A7</code></td><td>Reforma do balcão</td><td><code>B7</code></td><td>500</td></tr>
+                  <tr><td><code>A8</code></td><td>Capital de giro</td><td><code>B8</code></td><td>2000</td></tr>
+                  <tr><td><code>A9</code></td><td>Total do investimento</td><td><code>B9</code></td><td><code>=SOMA(B4:B8)</code></td></tr>
+                </tbody>
+              </table></div>
+            </div>
+            <div class="faca-assim">
+              <strong>Teste:</strong>
+              <ol>
+                <li>Troque o freezer de 1500 para 2000. O total muda sozinho para 10500? É a fórmula trabalhando. Depois, volte para 1500.</li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- passo 2 -->
+          <div class="conceito" style="grid-template-columns:1fr" id="passo-2">
+            <div class="texto">
+              <span class="olho">Passo 2 · item 2 da atividade</span>
+              <h3>Custos fixos e custos variáveis</h3>
+              <p><strong>Custo fixo</strong> é o que se paga todo mês, vendendo ou não (aluguel, internet, a hospedagem do site e do banco de dados). <strong>Custo variável</strong> é o que cresce a cada venda (os ingredientes e a embalagem de cada combo, a taxa do cartão).</p>
+              <p class="dica cuidado"><strong>Não esqueçam:</strong> o pró-labore (o salário de quem trabalha no negócio), o imposto e os custos do sistema. É o que o estudo de caso esqueceu.</p>
+              <div class="faca-assim">
+                <strong>Faça assim, ainda na aba Custos:</strong>
+                <ol>
+                  <li>Digite os custos fixos de <code>A11</code> a <code>B19</code>, com a soma em <code>B19</code>. Tem que dar <strong>3000</strong>.</li>
+                  <li>Digite o custo variável de <code>A22</code> a <code>B26</code>, com a soma em <code>B26</code>. Tem que dar <strong>6</strong>.</li>
+                  <li>Em <code>A28</code>, digite <code>Preço do combo</code> e, em <code>B28</code>, <code>16</code>.</li>
+                  <li>Coloque o formato <strong>Moeda</strong> em todos os valores.</li>
+                </ol>
+              </div>
+              <div class="tabela-rola"><table class="metodos">
+                <thead><tr><th>Célula</th><th>Digite</th><th>Célula</th><th>Digite</th></tr></thead>
+                <tbody>
+                  <tr><td><code>A11</code></td><td>Custos fixos por mês</td><td><code>B11</code></td><td>Valor</td></tr>
+                  <tr><td><code>A12</code></td><td>Aluguel do espaço</td><td><code>B12</code></td><td>1000</td></tr>
+                  <tr><td><code>A13</code></td><td>Pró-labore do sócio</td><td><code>B13</code></td><td>1200</td></tr>
+                  <tr><td><code>A14</code></td><td>Energia e gás</td><td><code>B14</code></td><td>300</td></tr>
+                  <tr><td><code>A15</code></td><td>Internet</td><td><code>B15</code></td><td>100</td></tr>
+                  <tr><td><code>A16</code></td><td>Hospedagem do site e banco de dados</td><td><code>B16</code></td><td>60</td></tr>
+                  <tr><td><code>A17</code></td><td>Imposto do MEI (DAS)</td><td><code>B17</code></td><td>80</td></tr>
+                  <tr><td><code>A18</code></td><td>Divulgação</td><td><code>B18</code></td><td>260</td></tr>
+                  <tr><td><code>A19</code></td><td>Total dos custos fixos</td><td><code>B19</code></td><td><code>=SOMA(B12:B18)</code></td></tr>
+                  <tr><td><code>A22</code></td><td>Custo variável por combo</td><td><code>B22</code></td><td>Valor</td></tr>
+                  <tr><td><code>A23</code></td><td>Ingredientes</td><td><code>B23</code></td><td>4,90</td></tr>
+                  <tr><td><code>A24</code></td><td>Embalagem</td><td><code>B24</code></td><td>0,60</td></tr>
+                  <tr><td><code>A25</code></td><td>Taxa do cartão e do Pix</td><td><code>B25</code></td><td>0,50</td></tr>
+                  <tr><td><code>A26</code></td><td>Total do custo variável</td><td><code>B26</code></td><td><code>=SOMA(B23:B25)</code></td></tr>
+                  <tr><td><code>A28</code></td><td>Preço do combo</td><td><code>B28</code></td><td>16</td></tr>
+                </tbody>
+              </table></div>
+            </div>
+          </div>
+
+          <!-- passo 3 -->
+          <div class="conceito" style="grid-template-columns:1fr" id="passo-3">
+            <div class="texto">
+              <span class="olho">Passo 3 · item 3 da atividade</span>
+              <h3>As receitas mês a mês</h3>
+              <p>Ninguém vende tudo no primeiro mês. O Lanche Já começa com 200 combos e cresce 50 por mês, até chegar a 500, o máximo que o balcão consegue atender. Receita é a quantidade vezes o preço.</p>
+              <div class="faca-assim">
+                <strong>Faça assim:</strong>
+                <ol>
+                  <li>Clique no <strong>+</strong> ao lado da aba Custos para criar uma aba nova e troque o nome dela para <code>Fluxo</code>.</li>
+                  <li>Em <code>A3</code>, digite <code>Linha</code>. Em <code>B3</code>, digite <code>Mês 1</code>. Clique em <code>B3</code>, segure o quadradinho do canto de baixo (a alça de preenchimento) e arraste até <code>M3</code>: o Excel escreve sozinho Mês 2, Mês 3… Mês 12.</li>
+                  <li>Em <code>A4</code>, digite <code>Combos vendidos</code> e, de <code>B4</code> a <code>M4</code>: 200, 250, 300, 350, 400, 450 e 500 nos seis últimos meses.</li>
+                  <li>Em <code>A5</code>, digite <code>Receita</code>. Em <code>B5</code>, digite <code>=B4*Custos!$B$28</code> e aperte <kbd>Enter</kbd>: aparece <strong>3200</strong>.</li>
+                  <li>Clique em <code>B5</code> e arraste a alça de preenchimento até <code>M5</code>. O mês 12 tem que dar <strong>8000</strong>.</li>
+                </ol>
+              </div>
+              <p class="dica"><strong>O que é o <code>$</code>?</strong> <code>Custos!$B$28</code> quer dizer "a célula B28 da aba Custos, sempre ela". Sem o <code>$</code>, ao arrastar, o Excel andaria para C28, D28… e pegaria células vazias. Atalho: depois de clicar na célula dentro da fórmula, aperte <kbd>F4</kbd> e o Excel coloca os <code>$</code>.</p>
+            </div>
+            <div class="faca-assim">
+              <strong>Teste:</strong>
+              <ol>
+                <li>Apague os <code>$</code> da fórmula do <code>B5</code>, arraste de novo e veja os zeros. Depois, coloque os <code>$</code> de volta e arraste outra vez.</li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- passo 4 -->
+          <div class="conceito" style="grid-template-columns:1fr" id="passo-4">
+            <div class="texto">
+              <span class="olho">Passo 4 · item 4 da atividade</span>
+              <h3>O fluxo de caixa de 12 meses</h3>
+              <p>Cada mês: o que entra (a receita) menos o que sai (os custos variáveis e os fixos) é o <strong>saldo do mês</strong>. O <strong>saldo acumulado</strong> começa negativo, com o investimento, e vai somando os saldos. Ele mostra quando o dinheiro aperta e quando o investimento volta.</p>
+              <div class="faca-assim">
+                <strong>Faça assim, na aba Fluxo (digite na coluna B e arraste até a M):</strong>
+                <ol>
+                  <li>Digite as fórmulas da tabela abaixo na coluna <code>B</code>.</li>
+                  <li>Selecione de <code>B6</code> até <code>B8</code> e arraste a alça de preenchimento até a coluna <code>M</code>.</li>
+                  <li>O saldo acumulado é diferente: o mês 1 começa com o investimento, e os outros somam o mês de antes. Digite o <code>B9</code> e o <code>C9</code> e arraste só o <code>C9</code> até <code>M9</code>.</li>
+                  <li>Selecione de <code>B9</code> até <code>M9</code> e vá em <strong>Página Inicial › Formatação Condicional › Realçar Regras das Células › É Menor do que…</strong>, digite <code>0</code> e escolha o vermelho. Os meses no negativo ficam vermelhos.</li>
+                </ol>
+              </div>
+              <div class="tabela-rola"><table class="metodos">
+                <thead><tr><th>Célula</th><th>Digite</th><th>O que é</th></tr></thead>
+                <tbody>
+                  <tr><td><code>A6</code> e <code>B6</code></td><td>(−) Custos variáveis · <code>=B4*Custos!$B$26</code></td><td>combos vezes o custo de cada um</td></tr>
+                  <tr><td><code>A7</code> e <code>B7</code></td><td>(−) Custos fixos · <code>=Custos!$B$19</code></td><td>o mesmo valor todo mês</td></tr>
+                  <tr><td><code>A8</code> e <code>B8</code></td><td>Saldo do mês · <code>=B5-B6-B7</code></td><td>o que entrou menos o que saiu</td></tr>
+                  <tr><td><code>A9</code> e <code>B9</code></td><td>Saldo acumulado · <code>=-Custos!$B$9+B8</code></td><td>começa devendo o investimento</td></tr>
+                  <tr><td><code>C9</code></td><td><code>=B9+C8</code></td><td>o acumulado de antes mais o mês de agora</td></tr>
+                </tbody>
+              </table></div>
+              <p class="dica"><strong>Confira:</strong> o saldo do mês 1 é <strong>−1000</strong>, o do mês 3 é <strong>0</strong> e, do mês 7 em diante, <strong>2000</strong>. O saldo acumulado fica positivo no <strong>mês 11</strong> (1500) e termina o ano em <strong>3500</strong>.</p>
+            </div>
+            <div class="faca-assim desafio">
+              <strong>Agora é com você:</strong>
+              <ol>
+                <li>Troquem os números do Lanche Já pelos do negócio de vocês, nas duas abas. As fórmulas continuam valendo.</li>
+                <li>Desafio de integração: quando o sistema estiver no ar, a receita de verdade sai do banco de dados. No phpMyAdmin, a consulta abaixo soma o faturamento de cada mês do Lanche Já.</li>
+              </ol>
+            </div>
+<div class="arquivo-codigo"><div class="arquivo-cab"><span>faturamento.sql (com o banco da aula 11)</span><button type="button">⧉ Copiar</button></div><pre class="codigo"><code><span class="linha"><span class="num">1</span><span class="com">-- faturamento de cada mês: quantidade vezes o preço do produto</span></span><span class="linha"><span class="num">2</span>SELECT DATE_FORMAT(pe.criado_em, &#x27;%Y-%m&#x27;) AS mes,</span><span class="linha"><span class="num">3</span>       SUM(pe.quantidade * p.preco) AS faturamento</span><span class="linha"><span class="num">4</span>FROM pedido pe</span><span class="linha"><span class="num">5</span>JOIN produto p ON p.id = pe.produto_id</span><span class="linha"><span class="num">6</span>GROUP BY mes</span><span class="linha"><span class="num">7</span>ORDER BY mes;</span></code></pre></div>
+          </div>
+
+          <!-- passo 5 -->
+          <div class="conceito" style="grid-template-columns:1fr" id="passo-5">
+            <div class="texto">
+              <span class="olho">Passo 5 · itens 5 e 6 da atividade</span>
+              <h3>O Copilot ajuda, vocês conferem</h3>
+              <p>No Excel do Microsoft 365, o botão <strong>Copilot</strong> fica na guia <strong>Página Inicial</strong>. Ele explica fórmulas e sugere outras, mas erra: toda fórmula que ele der precisa passar pelas três conferências abaixo antes de ficar na planilha.</p>
+              <div class="faca-assim">
+                <strong>Pedidos que ajudam:</strong>
+                <ol>
+                  <li>"Explique a fórmula da célula C9 da aba Fluxo, passo a passo."</li>
+                  <li>"Crie uma linha com o custo total de cada mês (custos variáveis mais custos fixos)."</li>
+                  <li>"Que custos de uma lanchonete com site próprio eu posso ter esquecido?"</li>
+                </ol>
+              </div>
+              <div class="faca-assim">
+                <strong>As três conferências:</strong>
+                <ol>
+                  <li><strong>Leia a fórmula:</strong> clique na célula e leia a barra de fórmulas. Ela usa as células certas, da aba certa?</li>
+                  <li><strong>Teste com um número fácil:</strong> troque as vendas do mês 1 para <code>100</code>. A receita tem que dar 1600 (100 × 16). Depois, volte para 200.</li>
+                  <li><strong>Arraste e confira o último mês:</strong> se a coluna M deu um valor estranho, faltou um <code>$</code>.</li>
+                </ol>
+              </div>
+            </div>
+            <p class="dica"><strong>Terminou?</strong> Em <strong>Arquivo › Salvar uma Cópia</strong> (ou <strong>Baixar uma cópia</strong>, no Excel do navegador), salve a planilha no computador e entregue no Moodle (item 6 da atividade).</p>
+          </div>
+        </section>
+
         <!-- ===================== ESTUDO DE CASO ===================== -->
         <section class="parte" id="caso">
           <div class="cab">
@@ -164,12 +359,12 @@
               <span class="barra-progresso"><span></span></span>
             </div>
             <ol class="checklist" id="passos-aula-13">
-              <li><label><input type="checkbox"><span>Listem o investimento inicial.</span></label></li>
-              <li><label><input type="checkbox"><span>Separem custos fixos e variáveis (incluam hospedagem e banco de dados).</span></label></li>
-              <li><label><input type="checkbox"><span>Estimem as receitas mês a mês.</span></label></li>
-              <li><label><input type="checkbox"><span>Montem o fluxo de caixa projetado de 12 meses.</span></label></li>
-              <li><label><input type="checkbox"><span>Confiram cada fórmula que o Copilot sugerir.</span></label></li>
-              <li><label><input type="checkbox"><span>Entreguem a planilha no Moodle.</span></label></li>
+              <li><label><input type="checkbox"><span>Listem o investimento inicial. <a href="#passo-1">Veja o passo 1.</a></span></label></li>
+              <li><label><input type="checkbox"><span>Separem custos fixos e variáveis (incluam hospedagem e banco de dados). <a href="#passo-2">Veja o passo 2.</a></span></label></li>
+              <li><label><input type="checkbox"><span>Estimem as receitas mês a mês. <a href="#passo-3">Veja o passo 3.</a></span></label></li>
+              <li><label><input type="checkbox"><span>Montem o fluxo de caixa projetado de 12 meses. <a href="#passo-4">Veja o passo 4.</a></span></label></li>
+              <li><label><input type="checkbox"><span>Confiram cada fórmula que o Copilot sugerir. <a href="#passo-5">Veja o passo 5.</a></span></label></li>
+              <li><label><input type="checkbox"><span>Entreguem a planilha no Moodle. <a href="#passo-5">Veja o passo 5.</a></span></label></li>
             </ol>
           </div>
         </section>
@@ -265,6 +460,7 @@
   </svg>
 
   <script src="../assets/js/aulas.js"></script>
+  <script src="../assets/js/copiar-codigo.js?v=1"></script>
   <script src="../assets/js/matrix.js?v=2"></script>
 </body>
 </html>

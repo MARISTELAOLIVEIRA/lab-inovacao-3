@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@100..125,400..900&family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="../assets/css/estilo.css">
   <link rel="stylesheet" href="../assets/css/disciplina.css?v=4">
-  <link rel="stylesheet" href="../assets/css/aula.css?v=2">
+  <link rel="stylesheet" href="../assets/css/aula.css?v=3">
   <link rel="stylesheet" href="../assets/css/neon.css?v=2">
 </head>
 <body>
@@ -32,6 +32,7 @@
       <nav class="nav" id="menu" aria-label="Partes da aula">
         <a href="../#aulas">← Todas as aulas</a>
         <a href="#conceitos">Conceitos</a>
+        <a href="#na-tela">Tutorial</a>
         <a href="#caso">Caso</a>
         <a href="#atividade">Atividade</a>
         <a href="#materiais">Materiais</a>
@@ -131,6 +132,143 @@
           </div>
         </section>
 
+        <!-- ===================== TUTORIAL: OS CENÁRIOS ===================== -->
+        <section class="parte" id="na-tela">
+          <div class="cab">
+            <span class="olho">T1 · tutorial</span>
+            <h2>Mão na massa: os três cenários em 5 passos</h2>
+            <p>
+              A última aba da planilha do <strong>Lanche Já</strong>: <code>Cenários</code>. Ela responde à pergunta da banca do estudo
+              de caso ("e se forem 100?") antes que a banca pergunte. Os cenários usam um mês cheio, com as vendas já no ritmo normal.
+            </p>
+          </div>
+
+          <!-- passo 1 -->
+          <div class="conceito" style="grid-template-columns:1fr" id="passo-1">
+            <div class="texto">
+              <span class="olho">Passo 1 · item 1 da atividade</span>
+              <h3>O cenário realista</h3>
+              <p>O realista é a previsão que vocês já fizeram nas aulas 13 e 14: 500 combos por mês, com o preço e os custos da aba Custos. A coluna C fica para ele; a B e a D, para os outros dois cenários.</p>
+              <div class="faca-assim">
+                <strong>Faça assim:</strong>
+                <ol>
+                  <li>Crie a aba <code>Cenários</code>. De <code>A3</code> a <code>D3</code>, digite: <code>Premissa (mês cheio)</code>, <code>Pessimista</code>, <code>Realista</code> e <code>Otimista</code>.</li>
+                  <li>Digite as premissas e os resultados da coluna C, como na tabela abaixo.</li>
+                  <li>Confira: lucro do mês <strong>R$ 2.000</strong>, ponto de equilíbrio <strong>300</strong> e payback <strong>5</strong> meses. São os mesmos números da aba Indicadores.</li>
+                </ol>
+              </div>
+              <div class="tabela-rola"><table class="metodos">
+                <thead><tr><th>Linha</th><th>Coluna A</th><th>Coluna C (realista)</th></tr></thead>
+                <tbody>
+                  <tr><td><code>4</code></td><td>Combos vendidos por mês</td><td><code>500</code></td></tr>
+                  <tr><td><code>5</code></td><td>Preço do combo</td><td><code>=Custos!B28</code></td></tr>
+                  <tr><td><code>6</code></td><td>Custo variável por combo</td><td><code>=Custos!B26</code></td></tr>
+                  <tr><td><code>7</code></td><td>Custos fixos por mês</td><td><code>=Custos!B19</code></td></tr>
+                  <tr><td><code>8</code></td><td>Margem por combo</td><td><code>=C5-C6</code></td></tr>
+                  <tr><td><code>9</code></td><td>Lucro do mês</td><td><code>=C4*C8-C7</code></td></tr>
+                  <tr><td><code>10</code></td><td>Ponto de equilíbrio (combos)</td><td><code>=ARREDONDAR.PARA.CIMA(C7/C8;0)</code></td></tr>
+                  <tr><td><code>11</code></td><td>Payback simples (meses)</td><td><code>=SE(C9&lt;=0;"não se paga";Custos!$B$9/C9)</code></td></tr>
+                </tbody>
+              </table></div>
+              <p class="dica"><strong>O <code>SE</code> do payback:</strong> se o lucro for zero ou negativo, o investimento nunca volta, e dividir por zero dá erro. O <code>SE</code> testa antes: lucro menor ou igual a zero escreve "não se paga"; senão, faz a conta.</p>
+            </div>
+          </div>
+
+          <!-- passo 2 -->
+          <div class="conceito" style="grid-template-columns:1fr" id="passo-2">
+            <div class="texto">
+              <span class="olho">Passo 2 · item 2 da atividade</span>
+              <h3>O pessimista e o otimista</h3>
+              <p>As fórmulas são as mesmas. Muda só o que entra. No <strong>pessimista</strong>, o Lanche Já vende 30% menos (350 combos) e os ingredientes sobem 10% (o custo variável vai para R$ 6,60). No <strong>otimista</strong>, vende 20% mais (600 combos).</p>
+              <div class="faca-assim">
+                <strong>Faça assim:</strong>
+                <ol>
+                  <li>Coluna B (pessimista): <code>B4</code> = <code>350</code>, <code>B5</code> = <code>16</code>, <code>B6</code> = <code>6,60</code> e <code>B7</code> = <code>=Custos!B19</code>.</li>
+                  <li>Coluna D (otimista): <code>D4</code> = <code>600</code>, <code>D5</code> = <code>16</code>, <code>D6</code> = <code>=Custos!B26</code> e <code>D7</code> = <code>=Custos!B19</code>.</li>
+                  <li>Selecione de <code>C8</code> até <code>C11</code>, copie (<kbd>Ctrl</kbd> + <kbd>C</kbd>) e cole em <code>B8</code> e em <code>D8</code>. O Excel ajusta as letras sozinho, e o <code>$B$9</code> do investimento fica fixo.</li>
+                </ol>
+              </div>
+              <div class="tabela-rola"><table class="metodos">
+                <thead><tr><th>Resultado</th><th>Pessimista</th><th>Realista</th><th>Otimista</th></tr></thead>
+                <tbody>
+                  <tr><td>Lucro do mês</td><td>R$ 290</td><td>R$ 2.000</td><td>R$ 3.000</td></tr>
+                  <tr><td>Ponto de equilíbrio</td><td>320 combos</td><td>300 combos</td><td>300 combos</td></tr>
+                  <tr><td>Payback simples</td><td>34,5 meses</td><td>5 meses</td><td>3,3 meses</td></tr>
+                </tbody>
+              </table></div>
+              <p class="dica cuidado"><strong>Leitura:</strong> no pessimista, o Lanche Já ainda lucra, mas pouco. O investimento levaria quase três anos para voltar. O negócio sobrevive ao pior caso, mas fica frágil.</p>
+            </div>
+          </div>
+
+          <!-- passo 3 -->
+          <div class="conceito" style="grid-template-columns:1fr" id="passo-3">
+            <div class="texto">
+              <span class="olho">Passo 3 · item 3 da atividade</span>
+              <h3>Uma variável por vez: qual mexe mais no resultado?</h3>
+              <p>É a análise de sensibilidade do conceito C1: a partir do realista, muda-se <strong>uma coisa só</strong> em 10% e vê-se quanto o lucro cai. A variável que derruba mais o lucro é a que merece mais cuidado.</p>
+              <div class="faca-assim">
+                <strong>Faça assim:</strong>
+                <ol>
+                  <li>Em <code>A13</code>, digite <code>Uma variável por vez</code>. Em <code>A14</code>, <code>B14</code> e <code>C14</code>: <code>Mudança</code>, <code>Lucro do mês</code> e <code>Variação do lucro</code>.</li>
+                  <li>Digite as quatro linhas da tabela abaixo. A coluna C é igual em todas: <code>=B15/$C$9-1</code> no <code>C15</code>, arrastando até o <code>C18</code>, com o formato <strong>%</strong>.</li>
+                  <li>Ordenem as quatro mudanças da que mais derruba o lucro para a que menos derruba.</li>
+                </ol>
+              </div>
+              <div class="tabela-rola"><table class="metodos">
+                <thead><tr><th>Linha</th><th>Coluna A</th><th>Coluna B</th><th>Resultado</th></tr></thead>
+                <tbody>
+                  <tr><td><code>15</code></td><td>Vendas 10% menores</td><td><code>=($C$4*0,9)*($C$5-$C$6)-$C$7</code></td><td>R$ 1.500 (−25%)</td></tr>
+                  <tr><td><code>16</code></td><td>Preço 10% menor</td><td><code>=$C$4*($C$5*0,9-$C$6)-$C$7</code></td><td>R$ 1.200 (−40%)</td></tr>
+                  <tr><td><code>17</code></td><td>Custo variável 10% maior</td><td><code>=$C$4*($C$5-$C$6*1,1)-$C$7</code></td><td>R$ 1.700 (−15%)</td></tr>
+                  <tr><td><code>18</code></td><td>Custos fixos 10% maiores</td><td><code>=$C$4*($C$5-$C$6)-$C$7*1,1</code></td><td>R$ 1.700 (−15%)</td></tr>
+                </tbody>
+              </table></div>
+              <p class="dica"><strong>A descoberta:</strong> baixar o preço em 10% derruba o lucro em 40%. O preço é a variável que mais mexe no resultado do Lanche Já. Por isso, promoção de "combo mais barato" precisa de conta antes. No negócio de vocês, qual foi?</p>
+            </div>
+            <div class="faca-assim desafio">
+              <strong>Agora é com você (bônus):</strong>
+              <ol>
+                <li>O Excel tem uma ferramenta própria para isso: <strong>Dados › Teste de Hipóteses › Gerenciador de Cenários</strong>. Criem os três cenários nela, mudando as células <code>C4</code> e <code>C6</code>, e cliquem em <strong>Resumir</strong> para o Excel montar a tabela comparativa.</li>
+                <li>Peçam ao Copilot: "Que outras variáveis podem mudar o resultado de uma lanchonete?". Escolham uma e testem na tabela.</li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- passo 4 -->
+          <div class="conceito" style="grid-template-columns:1fr" id="passo-4">
+            <div class="texto">
+              <span class="olho">Passo 4 · item 4 da atividade</span>
+              <h3>As conclusões e o plano B</h3>
+              <p>Análise de sensibilidade serve para decidir. Registrem no Loop três frases, completando o modelo com os números de vocês:</p>
+              <div class="faca-assim">
+                <strong>Modelo de conclusão (exemplo do Lanche Já):</strong>
+                <ol>
+                  <li><strong>Robustez:</strong> "No cenário pessimista, o negócio ainda lucra R$ 290 por mês, mas o investimento leva 34 meses para voltar."</li>
+                  <li><strong>Variável crítica:</strong> "O preço é a variável que mais mexe no resultado: 10% a menos no preço derrubam o lucro em 40%."</li>
+                  <li><strong>Plano B:</strong> "Se as vendas ficarem abaixo de 350 combos, vamos cortar a divulgação paga e trocar a reforma por um balcão móvel, e não vamos baixar o preço."</li>
+                </ol>
+              </div>
+              <p class="dica">Essas três frases vão para o slide de números da apresentação final. É a resposta para o "e se…?" da banca.</p>
+            </div>
+          </div>
+
+          <!-- passo 5 -->
+          <div class="conceito" style="grid-template-columns:1fr" id="passo-5">
+            <div class="texto">
+              <span class="olho">Passo 5 · item 5 da atividade</span>
+              <h3>Conferir e entregar</h3>
+              <div class="faca-assim">
+                <strong>Faça assim:</strong>
+                <ol>
+                  <li>Confiram a aba Cenários com a da <a href="../assets/arquivos/Lanche-Ja-planilha-modelo.xlsx" download>planilha modelo</a>.</li>
+                  <li>Troquem pelos números do negócio de vocês: as quantidades e os custos dos cenários e as quatro mudanças da sensibilidade.</li>
+                  <li>Entreguem no Moodle a planilha completa (abas Custos, Fluxo, Indicadores e Cenários) e as três frases de conclusão.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- ===================== ESTUDO DE CASO ===================== -->
         <section class="parte" id="caso">
           <div class="cab">
@@ -163,11 +301,11 @@
               <span class="barra-progresso"><span></span></span>
             </div>
             <ol class="checklist" id="passos-aula-15">
-              <li><label><input type="checkbox"><span>Montem o cenário realista.</span></label></li>
-              <li><label><input type="checkbox"><span>Montem o pessimista e o otimista.</span></label></li>
-              <li><label><input type="checkbox"><span>Descubram as variáveis que mais impactam o resultado.</span></label></li>
-              <li><label><input type="checkbox"><span>Registrem as conclusões.</span></label></li>
-              <li><label><input type="checkbox"><span>Entreguem a análise no Moodle.</span></label></li>
+              <li><label><input type="checkbox"><span>Montem o cenário realista. <a href="#passo-1">Veja o passo 1.</a></span></label></li>
+              <li><label><input type="checkbox"><span>Montem o pessimista e o otimista. <a href="#passo-2">Veja o passo 2.</a></span></label></li>
+              <li><label><input type="checkbox"><span>Descubram as variáveis que mais impactam o resultado. <a href="#passo-3">Veja o passo 3.</a></span></label></li>
+              <li><label><input type="checkbox"><span>Registrem as conclusões. <a href="#passo-4">Veja o passo 4.</a></span></label></li>
+              <li><label><input type="checkbox"><span>Entreguem a análise no Moodle. <a href="#passo-5">Veja o passo 5.</a></span></label></li>
             </ol>
           </div>
         </section>
@@ -257,6 +395,7 @@
   </svg>
 
   <script src="../assets/js/aulas.js"></script>
+  <script src="../assets/js/copiar-codigo.js?v=1"></script>
   <script src="../assets/js/matrix.js?v=2"></script>
 </body>
 </html>

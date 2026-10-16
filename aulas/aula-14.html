@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@100..125,400..900&family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="../assets/css/estilo.css">
   <link rel="stylesheet" href="../assets/css/disciplina.css?v=4">
-  <link rel="stylesheet" href="../assets/css/aula.css?v=2">
+  <link rel="stylesheet" href="../assets/css/aula.css?v=3">
   <link rel="stylesheet" href="../assets/css/neon.css?v=2">
 </head>
 <body>
@@ -32,6 +32,7 @@
       <nav class="nav" id="menu" aria-label="Partes da aula">
         <a href="../#aulas">← Todas as aulas</a>
         <a href="#conceitos">Conceitos</a>
+        <a href="#na-tela">Tutorial</a>
         <a href="#caso">Caso</a>
         <a href="#atividade">Atividade</a>
         <a href="#materiais">Materiais</a>
@@ -142,6 +143,143 @@
           </div>
         </section>
 
+        <!-- ===================== TUTORIAL: OS INDICADORES ===================== -->
+        <section class="parte" id="na-tela">
+          <div class="cab">
+            <span class="olho">T1 · tutorial</span>
+            <h2>Mão na massa: os indicadores e o painel em 5 passos</h2>
+            <p>
+              Continuação da planilha da aula 13, com o mesmo <strong>Lanche Já</strong>. Hoje a planilha ganha a aba
+              <code>Indicadores</code>, que responde à pergunta da aula: o negócio para em pé? Façam com os números do exemplo,
+              confiram os resultados e depois olhem os números de vocês.
+            </p>
+          </div>
+
+          <!-- passo 1 -->
+          <div class="conceito" style="grid-template-columns:1fr" id="passo-1">
+            <div class="texto">
+              <span class="olho">Passo 1 · item 1 da atividade</span>
+              <h3>O ponto de equilíbrio</h3>
+              <p>Cada combo é vendido por R$ 16 e custa R$ 6: sobram <strong>R$ 10</strong> para pagar os custos fixos. Essa sobra é a <strong>margem de contribuição</strong>. Com R$ 3.000 de custo fixo, são 3.000 ÷ 10 = <strong>300 combos por mês</strong> para empatar. É a mesma conta da marmitaria do estudo de caso.</p>
+              <div class="faca-assim">
+                <strong>Faça assim:</strong>
+                <ol>
+                  <li>Abra a planilha do grupo, crie uma aba nova e troque o nome para <code>Indicadores</code>.</li>
+                  <li>Em <code>A3</code>, <code>B3</code> e <code>C3</code>, digite os títulos: <code>Indicador</code>, <code>Resultado</code> e <code>Como ler</code>.</li>
+                  <li>Digite as três primeiras linhas da tabela abaixo. Na coluna C, escrevam com as palavras de vocês o que cada número quer dizer.</li>
+                </ol>
+              </div>
+              <div class="tabela-rola"><table class="metodos">
+                <thead><tr><th>Célula</th><th>Digite</th><th>Resultado</th></tr></thead>
+                <tbody>
+                  <tr><td><code>A4</code> e <code>B4</code></td><td>Margem por combo · <code>=Custos!B28-Custos!B26</code></td><td>R$ 10,00</td></tr>
+                  <tr><td><code>A5</code> e <code>B5</code></td><td>Ponto de equilíbrio (combos por mês) · <code>=ARREDONDAR.PARA.CIMA(Custos!B19/B4;0)</code></td><td>300</td></tr>
+                  <tr><td><code>A6</code> e <code>B6</code></td><td>Ponto de equilíbrio (combos por dia) · <code>=ARREDONDAR.PARA.CIMA(B5/20;0)</code></td><td>15</td></tr>
+                </tbody>
+              </table></div>
+              <p class="dica"><strong>Por que arredondar para cima?</strong> Ninguém vende meio combo. Se a conta der 299,4, são 300 combos para empatar. E o 20 é o número de dias de aula no mês: a meta do balcão fica em 15 combos por noite.</p>
+            </div>
+            <div class="faca-assim desafio">
+              <strong>Agora é com você (conexão STEAM):</strong>
+              <ol>
+                <li>Na aba Fluxo, crie a linha 10: <code>Custo total</code>, com <code>=B6+B7</code> no <code>B10</code>, arrastando até o <code>M10</code>.</li>
+                <li>Selecione as linhas <code>Receita</code> e <code>Custo total</code> (segure <kbd>Ctrl</kbd> para escolher as duas) e vá em <strong>Inserir › Gráfico de Linhas</strong>.</li>
+                <li>Achem o ponto em que as duas linhas se cruzam: é o ponto de equilíbrio. Em que mês ele acontece?</li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- passo 2 -->
+          <div class="conceito" style="grid-template-columns:1fr" id="passo-2">
+            <div class="texto">
+              <span class="olho">Passo 2 · item 2 da atividade</span>
+              <h3>Lucratividade, rentabilidade e payback</h3>
+              <p>Os três índices do conceito C2, calculados com o que já está na planilha. O mês 12 é um mês "cheio", com as vendas no máximo.</p>
+              <div class="tabela-rola"><table class="metodos">
+                <thead><tr><th>Célula</th><th>Digite</th><th>Resultado</th></tr></thead>
+                <tbody>
+                  <tr><td><code>A7</code> e <code>B7</code></td><td>Lucratividade (mês 12) · <code>=Fluxo!M8/Fluxo!M5</code></td><td>25%</td></tr>
+                  <tr><td><code>A8</code> e <code>B8</code></td><td>Rentabilidade (1º ano) · <code>=SOMA(Fluxo!B8:M8)/Custos!B9</code></td><td>135%</td></tr>
+                  <tr><td><code>A9</code> e <code>B9</code></td><td>Payback simples (meses) · <code>=Custos!B9/Fluxo!M8</code></td><td>5</td></tr>
+                  <tr><td><code>A10</code> e <code>B10</code></td><td>Payback pelo fluxo de caixa (mês) · <code>=CONT.SE(Fluxo!B9:M9;"&lt;0")+1</code></td><td>11</td></tr>
+                </tbody>
+              </table></div>
+              <div class="faca-assim">
+                <strong>Faça assim:</strong>
+                <ol>
+                  <li>Digite as quatro linhas da tabela.</li>
+                  <li>Selecione <code>B7</code> e <code>B8</code> e clique no botão <strong>%</strong> da Página Inicial.</li>
+                  <li>Leiam assim: de cada R$ 1 vendido no mês 12, sobram R$ 0,25 (lucratividade). No primeiro ano, o lucro foi 1,35 vez o que se investiu (rentabilidade).</li>
+                </ol>
+              </div>
+              <p class="dica cuidado"><strong>Por que dois paybacks?</strong> O simples divide o investimento pelo lucro de um mês cheio: daria 5 meses. Mas os primeiros meses vendem menos, e o fluxo de caixa mostra a verdade: o saldo acumulado só fica positivo no <strong>mês 11</strong>. O <code>CONT.SE</code> conta quantos meses ficaram no negativo e soma 1. Na apresentação, usem o do fluxo de caixa.</p>
+            </div>
+          </div>
+
+          <!-- passo 3 -->
+          <div class="conceito" style="grid-template-columns:1fr" id="passo-3">
+            <div class="texto">
+              <span class="olho">Passo 3 · item 3 da atividade</span>
+              <h3>O negócio é viável? Quatro perguntas</h3>
+              <div class="faca-assim">
+                <strong>Respondam em grupo, olhando a planilha:</strong>
+                <ol>
+                  <li><strong>O ponto de equilíbrio cabe no balcão?</strong> 15 combos por noite, num intervalo de 15 minutos. Dá para atender? E o de vocês, cabe na capacidade do negócio?</li>
+                  <li><strong>O capital de giro aguenta?</strong> Qual é o saldo acumulado mais negativo? (No Lanche Já, −11.500 nos meses 2 e 3.) Sem capital de giro suficiente, o negócio fecha antes de dar certo.</li>
+                  <li><strong>O payback é razoável?</strong> Para um negócio pequeno, até uns dois anos costuma ser aceitável. O de vocês?</li>
+                  <li><strong>O que ainda falta medir?</strong> Anotem a dúvida principal: ela é o assunto da aula 15 (e se vender menos?).</li>
+                </ol>
+              </div>
+              <p>Registrem as respostas no Loop, num parágrafo que começa assim: "O negócio é viável porque…" ou "O negócio ainda não é viável porque…, e para mudar isso vamos…".</p>
+            </div>
+          </div>
+
+          <!-- passo 4 -->
+          <div class="conceito" style="grid-template-columns:1fr" id="passo-4">
+            <div class="texto">
+              <span class="olho">Passo 4 · item 4 da atividade</span>
+              <h3>O painel no Power BI</h3>
+              <p>O Power BI gosta de tabela "em pé": uma linha por mês. Por isso, primeiro a gente vira o fluxo de caixa de lado numa aba nova, e depois o Power BI lê essa aba.</p>
+              <div class="faca-assim">
+                <strong>No Excel: a tabela do painel</strong>
+                <ol>
+                  <li>Na aba Fluxo, selecione de <code>A3</code> até <code>M9</code> e copie (<kbd>Ctrl</kbd> + <kbd>C</kbd>).</li>
+                  <li>Crie a aba <code>Painel</code>, clique em <code>A1</code> e vá em <strong>Página Inicial › Colar › Colar Especial</strong>. Marque <strong>Valores</strong> e <strong>Transpor</strong> e clique em OK. Os meses viram linhas.</li>
+                  <li>Troque o título <code>A1</code> por <code>Mês</code> e, de <code>A2</code> a <code>A13</code>, troque "Mês 1, Mês 2…" por 1, 2… 12. Assim o Power BI põe os meses na ordem certa.</li>
+                  <li>Clique numa célula da tabela, aperte <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd> (ou <strong>Inserir › Tabela</strong>) e confirme <strong>Minha tabela tem cabeçalhos</strong>. Em <strong>Design da Tabela</strong>, dê o nome <code>Mensal</code>. Salve a planilha.</li>
+                </ol>
+              </div>
+              <div class="faca-assim">
+                <strong>No Power BI Desktop (computadores do laboratório):</strong>
+                <ol>
+                  <li><strong>Obter dados › Pasta de trabalho do Excel</strong>, escolha a planilha, marque a tabela <code>Mensal</code> e clique em <strong>Carregar</strong>.</li>
+                  <li>Clique no visual <strong>Cartão</strong> e arraste <code>Receita</code> para ele: aparece o total do ano. Faça outro cartão com <code>Saldo do mês</code> (o lucro do ano).</li>
+                  <li>Clique no visual <strong>Gráfico de colunas</strong>: <code>Mês</code> no eixo X e <code>Saldo do mês</code> no eixo Y.</li>
+                  <li>Clique no visual <strong>Gráfico de linhas</strong>: <code>Mês</code> no eixo X e <code>Saldo acumulado</code> no eixo Y. O ponto em que a linha cruza o zero é o payback.</li>
+                  <li>Dê um título ao painel e salve o arquivo <code>.pbix</code> na pasta do grupo.</li>
+                </ol>
+              </div>
+              <p class="dica"><strong>No Mac ou sem Power BI?</strong> Os mesmos gráficos saem no próprio Excel: selecione a tabela <code>Mensal</code> e use <strong>Inserir › Gráficos Recomendados</strong>. E o Microsoft Learn tem os módulos gratuitos de Power BI, nos materiais da aula.</p>
+            </div>
+          </div>
+
+          <!-- passo 5 -->
+          <div class="conceito" style="grid-template-columns:1fr" id="passo-5">
+            <div class="texto">
+              <span class="olho">Passo 5 · item 5 da atividade</span>
+              <h3>Conferir e entregar</h3>
+              <div class="faca-assim">
+                <strong>Faça assim:</strong>
+                <ol>
+                  <li>Confiram os resultados do Lanche Já com a <a href="../assets/arquivos/Lanche-Ja-planilha-modelo.xlsx" download>planilha modelo</a> (aba Indicadores). Deu diferente? Comparem as fórmulas, célula por célula.</li>
+                  <li>Troquem pelos números do negócio de vocês e reescrevam a conclusão do passo 3.</li>
+                  <li>Entreguem no Moodle a planilha, um print do painel e o parágrafo de viabilidade.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- ===================== ESTUDO DE CASO ===================== -->
         <section class="parte" id="caso">
           <div class="cab">
@@ -175,11 +313,11 @@
               <span class="barra-progresso"><span></span></span>
             </div>
             <ol class="checklist" id="passos-aula-14">
-              <li><label><input type="checkbox"><span>Calculem o ponto de equilíbrio.</span></label></li>
-              <li><label><input type="checkbox"><span>Calculem lucratividade, rentabilidade e payback.</span></label></li>
-              <li><label><input type="checkbox"><span>Discutam em grupo: o negócio é viável?</span></label></li>
-              <li><label><input type="checkbox"><span>Montem um painel com os indicadores no Power BI.</span></label></li>
-              <li><label><input type="checkbox"><span>Entreguem os indicadores no Moodle.</span></label></li>
+              <li><label><input type="checkbox"><span>Calculem o ponto de equilíbrio. <a href="#passo-1">Veja o passo 1.</a></span></label></li>
+              <li><label><input type="checkbox"><span>Calculem lucratividade, rentabilidade e payback. <a href="#passo-2">Veja o passo 2.</a></span></label></li>
+              <li><label><input type="checkbox"><span>Discutam em grupo: o negócio é viável? <a href="#passo-3">Veja o passo 3.</a></span></label></li>
+              <li><label><input type="checkbox"><span>Montem um painel com os indicadores no Power BI. <a href="#passo-4">Veja o passo 4.</a></span></label></li>
+              <li><label><input type="checkbox"><span>Entreguem os indicadores no Moodle. <a href="#passo-5">Veja o passo 5.</a></span></label></li>
             </ol>
           </div>
         </section>
@@ -275,6 +413,7 @@
   </svg>
 
   <script src="../assets/js/aulas.js"></script>
+  <script src="../assets/js/copiar-codigo.js?v=1"></script>
   <script src="../assets/js/matrix.js?v=2"></script>
 </body>
 </html>
