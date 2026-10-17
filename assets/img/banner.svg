@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="titulo descricao">
+  <title id="titulo">Laboratório de Inovação III · Da ideia ao sistema, do sistema ao negócio · Profa. Maristela · Senac DF</title>
+  <desc id="descricao">Banner: o título em rosa e ciano, ao lado de uma janela com uma consulta MySQL que soma os pedidos e um gráfico em que a reta da receita cruza a dos custos no ponto de equilíbrio.</desc>
+
+  <defs>
+    <!-- Brilhos do fundo: rosa à esquerda, ciano à direita -->
+    <radialGradient id="brilhoRosa" cx="6%" cy="15%" r="65%">
+      <stop offset="0" stop-color="#FF4FA3" stop-opacity=".40"/>
+      <stop offset="1" stop-color="#FF4FA3" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="brilhoCiano" cx="92%" cy="110%" r="55%">
+      <stop offset="0" stop-color="#00B8D9" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#00B8D9" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="placa" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M0 30 H22 L30 22 V0 M60 40 H42 L36 46 V60" fill="none" stroke="#FF4FA3" stroke-opacity=".07" stroke-width="2"/>
+      <circle cx="30" cy="22" r="3" fill="#FF4FA3" fill-opacity=".1"/>
+      <circle cx="36" cy="46" r="3" fill="#FF4FA3" fill-opacity=".1"/>
+    </pattern>
+    <filter id="neon" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="borrado"/>
+      <feMerge><feMergeNode in="borrado"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Fundo -->
+  <rect width="1200" height="360" rx="18" fill="#141A2B"/>
+  <rect width="1200" height="360" rx="18" fill="url(#placa)"/>
+  <rect width="1200" height="360" rx="18" fill="url(#brilhoRosa)"/>
+  <rect width="1200" height="360" rx="18" fill="url(#brilhoCiano)"/>
+
+  <!-- Título -->
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <text x="64" y="88" font-size="21" fill="#A9B3CC" letter-spacing="3">ADS · 3º SEMESTRE · SENAC DF</text>
+    <text x="62" y="156" font-size="60" font-weight="800" fill="#FF6FB5" filter="url(#neon)">Ideia + planilha</text>
+    <text x="62" y="224" font-size="60" font-weight="800" fill="#2FD3F0" filter="url(#neon)">= negócio</text>
+    <text x="64" y="276" font-size="22" fill="#E2E8F0">Laboratório de Inovação III: um sistema em PHP</text>
+    <text x="64" y="306" font-size="22" fill="#E2E8F0">e MySQL no coração de um plano de negócio.</text>
+  </g>
+
+  <!-- Janela: a consulta e o gráfico -->
+  <g transform="translate(660 40)">
+    <rect width="480" height="280" rx="12" fill="#0F1424" stroke="#2E3656" stroke-width="2"/>
+    <rect width="480" height="38" rx="12" fill="#1B2238"/>
+    <rect y="26" width="480" height="12" fill="#1B2238"/>
+    <circle cx="22" cy="19" r="7" fill="#FF5F57"/>
+    <circle cx="44" cy="19" r="7" fill="#FEBC2E"/>
+    <circle cx="66" cy="19" r="7" fill="#28C840"/>
+    <text x="240" y="25" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="15" fill="#A9B3CC">projeto.sql · pitch para a banca</text>
+
+    <!-- A consulta -->
+    <g font-family="Consolas, 'Courier New', monospace" font-size="16">
+      <text x="20" y="70"><tspan fill="#00B8D9">mysql&gt;</tspan><tspan fill="#C586C0"> SELECT</tspan><tspan fill="#DCDCAA"> SUM</tspan><tspan fill="#D4D4D4">(valor)</tspan><tspan fill="#C586C0"> FROM</tspan><tspan fill="#D4D4D4"> pedido;</tspan></text>
+      <text x="20" y="96" fill="#6A9955">-- a resposta vira o fluxo de caixa</text>
+    </g>
+
+    <!-- Gráfico do ponto de equilíbrio -->
+    <g transform="translate(40 116)">
+      <path d="M0 0 V130 H400" fill="none" stroke="#5B6B85" stroke-width="2"/>
+      <!-- custos: começam com o investimento e sobem devagar -->
+      <path d="M0 70 L400 30" fill="none" stroke="#FF4FA3" stroke-width="3" stroke-linecap="round"/>
+      <!-- receita: começa do zero e sobe mais rápido -->
+      <path d="M0 130 L400 0" fill="none" stroke="#00B8D9" stroke-width="3" stroke-linecap="round"/>
+      <!-- o cruzamento: (267, 43) -->
+      <path d="M267 43 V130" stroke="#E2E8F0" stroke-opacity=".5" stroke-width="1.5" stroke-dasharray="4 5"/>
+      <circle cx="267" cy="43" r="7" fill="#FFFFFF" filter="url(#neon)"/>
+      <g font-family="Consolas, 'Courier New', monospace" font-size="14">
+        <text x="404" y="34" text-anchor="end" dy="-10" fill="#FF6FB5">custos</text>
+        <text x="330" y="12" text-anchor="end" fill="#2FD3F0">receita</text>
+        <text x="277" y="92" fill="#E2E8F0">ponto de</text>
+        <text x="277" y="110" fill="#E2E8F0">equilíbrio</text>
+        <text x="0" y="150" fill="#A9B3CC">← prejuízo</text>
+        <text x="400" y="150" text-anchor="end" fill="#A3E635">lucro! →</text>
+      </g>
+    </g>
+  </g>
+</svg>
