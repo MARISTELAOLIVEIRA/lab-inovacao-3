@@ -34,8 +34,7 @@
         <a href="#ementa">Ementa</a>
         <a href="#aulas">Aulas</a>
         <a href="#avaliacao">Avaliação</a>
-        <a href="#atividades" data-atividades-link style="display:none">Atividades</a>
-        <a href="#bibliografia">Bibliografia</a>
+        <a href="#atividades">Atividades</a>
       </nav>
       <div class="ajustes">
         <button type="button" id="btn-tema" aria-label="Mudar para o tema claro">
@@ -275,12 +274,39 @@
       </div>
     </section>
 
+    <!-- ===================== BIBLIOGRAFIA ===================== -->
+    <section class="bloco alt" id="bibliografia">
+      <div class="envolve">
+        <div class="cab" data-revela>
+          <span class="olho">B1 · bibliografia</span>
+          <h2>Para ir além da aula</h2>
+        </div>
+        <div class="biblio">
+          <div class="cartao" data-revela>
+            <span class="olho">Básica</span>
+            <ol>
+              <li><strong>Teoria geral da administração, volume I</strong>CHIAVENATO, Idalberto. 7. ed. Rio de Janeiro: Elsevier, 2014.</li>
+              <li><strong>Teoria geral da administração, volume II</strong>CHIAVENATO, Idalberto. 7. ed. Rio de Janeiro: Elsevier, 2014.</li>
+              <li><strong>Fundamentos de administração</strong>MAXIMIANO, Antonio Cesar Amaru. 2. ed. São Paulo: Atlas, 2004.</li>
+            </ol>
+          </div>
+          <div class="cartao" data-revela style="--i:1">
+            <span class="olho">Complementar</span>
+            <ol>
+              <li><strong>Pequena empresa &amp; competitividade</strong>FARAH JR., Moisés Francisco. Curitiba: Juruá, 2008.</li>
+              <li><strong>Gerência de projetos: guia para o exame oficial do PMI</strong>HELDMAN, Kim. 5. ed. Rio de Janeiro: Elsevier, 2009.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== AULAS ===================== -->
     <!--
       EDITE AQUI: uma linha por aula, numerada e sem data (o material serve para vários semestres). Quando a página da aula existir, coloque o link no título
       (<a href="aulas/aula-NN.html">) e a etiqueta "abrir a aula →" no fim da linha de datas.
     -->
-    <section class="bloco alt" id="aulas">
+    <section class="bloco" id="aulas">
       <div class="envolve">
         <div class="cab" data-revela>
           <span class="olho">A1–A18 · aulas</span>
@@ -364,24 +390,8 @@
       </div>
     </section>
 
-    <!-- ===================== J1 · ATIVIDADES (liberadas pelo Placa-Mãe; a seção só aparece quando há alguma) ===================== -->
-    <section class="bloco" id="atividades" data-atividades-secao style="display:none">
-      <div class="envolve">
-        <div class="cab">
-          <span class="olho">J1 · atividades</span>
-          <h2>Atividades</h2>
-          <p>As atividades que valem nota, com o que fazer e os links.</p>
-        </div>
-        <div class="repos" data-atividades></div>
-      </div>
-    <!-- ícone de repositório dos cards (Octicons, licença MIT) -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="ic-repo" viewBox="0 0 16 16"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/></symbol>
-  </svg>
-    </section>
-
     <!-- ===================== COMO AS AULAS FUNCIONAM ===================== -->
-    <section class="bloco" id="metodo">
+    <section class="bloco alt" id="metodo">
       <div class="envolve">
         <div class="cab" data-revela>
           <span class="olho">M1 · metodologia</span>
@@ -426,10 +436,10 @@
     </section>
 
     <!-- ===================== AVALIAÇÃO ===================== -->
-    <section class="bloco alt" id="avaliacao">
+    <section class="bloco" id="avaliacao">
       <div class="envolve">
         <div class="cab" data-revela>
-          <span class="olho">A1 · avaliação</span>
+          <span class="olho">N1 · avaliação</span>
           <h2>Como a nota é montada</h2>
           <p>Dez pontos por bimestre. Aqui não tem prova: a nota vem do projeto.</p>
         </div>
@@ -458,31 +468,21 @@
       </div>
     </section>
 
-    <!-- ===================== BIBLIOGRAFIA ===================== -->
-    <section class="bloco" id="bibliografia">
+    <!-- ===================== J1 · ATIVIDADES (as liberadas pelo Placa-Mãe entram em data-atividades) ===================== -->
+    <section class="bloco alt" id="atividades">
       <div class="envolve">
-        <div class="cab" data-revela>
-          <span class="olho">B1 · bibliografia</span>
-          <h2>Para ir além da aula</h2>
+        <div class="cab">
+          <span class="olho">J1 · atividades</span>
+          <h2>Atividades</h2>
+          <p>As atividades que valem nota, com o que fazer e os links.</p>
         </div>
-        <div class="biblio">
-          <div class="cartao" data-revela>
-            <span class="olho">Básica</span>
-            <ol>
-              <li><strong>Teoria geral da administração, volume I</strong>CHIAVENATO, Idalberto. 7. ed. Rio de Janeiro: Elsevier, 2014.</li>
-              <li><strong>Teoria geral da administração, volume II</strong>CHIAVENATO, Idalberto. 7. ed. Rio de Janeiro: Elsevier, 2014.</li>
-              <li><strong>Fundamentos de administração</strong>MAXIMIANO, Antonio Cesar Amaru. 2. ed. São Paulo: Atlas, 2004.</li>
-            </ol>
-          </div>
-          <div class="cartao" data-revela style="--i:1">
-            <span class="olho">Complementar</span>
-            <ol>
-              <li><strong>Pequena empresa &amp; competitividade</strong>FARAH JR., Moisés Francisco. Curitiba: Juruá, 2008.</li>
-              <li><strong>Gerência de projetos: guia para o exame oficial do PMI</strong>HELDMAN, Kim. 5. ed. Rio de Janeiro: Elsevier, 2009.</li>
-            </ol>
-          </div>
-        </div>
+        <p class="vazio-atividades" data-atividades-vazio>Ainda não há atividade liberada.</p>
+        <div class="repos" data-atividades></div>
       </div>
+    <!-- ícone de repositório dos cards (Octicons, licença MIT) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="ic-repo" viewBox="0 0 16 16"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/></symbol>
+  </svg>
     </section>
 
   </main>
@@ -535,7 +535,7 @@
   </footer>
 
   <script src="assets/js/aulas.js"></script>
-  <script src="assets/js/atividades.js?v=2"></script>
+  <script src="assets/js/atividades.js?v=3"></script>
   <script src="assets/js/matrix.js?v=2"></script>
 </body>
 </html>
