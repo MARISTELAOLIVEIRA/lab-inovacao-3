@@ -135,7 +135,7 @@ Nas aulas 11 a 15, a seção **Tutorial** mostra cada passo numa caixa **Faça a
 | 📈 **Power BI** | O painel com os indicadores do negócio. |
 | 📝 **Microsoft Forms** | A pesquisa de mercado com quem importa: o cliente. |
 | 💬 **Teams, Loop e Whiteboard** | Combinar, registrar as entregas e trabalhar junto. |
-| 🐙 **GitHub** e **GitHub Copilot** | Guardar o código do protótipo e ter ajuda para programar. |
+| <img src="https://maristelaoliveira.github.io/assets/img/octocat-stela.webp" width="22" height="22" alt="Octocat da Stela" align="absmiddle"> **GitHub** e **GitHub Copilot** | Guardar o código do protótipo e ter ajuda para programar. |
 | 🎓 **Moodle** | Entregar as atividades. |
 
 ---
